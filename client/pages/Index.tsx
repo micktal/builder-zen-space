@@ -1412,37 +1412,6 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* Objectifs pédagogiques */}
-            <Card className="p-8 border-medical-200 shadow-lg bg-gradient-to-r from-medical-50 to-wellness-50">
-              <CardContent>
-                <h3 className="text-xl font-bold text-medical-800 mb-4 flex items-center gap-2">
-                  🎯 Objectifs de ces exercices
-                </h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-medical-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Target className="w-8 h-8 text-medical-600" />
-                    </div>
-                    <h4 className="font-semibold text-medical-800 mb-2">Classifier les situations</h4>
-                    <p className="text-sm text-gray-600">Apprendre à distinguer les différents types de stress</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-therapeutic-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Brain className="w-8 h-8 text-therapeutic-600" />
-                    </div>
-                    <h4 className="font-semibold text-therapeutic-800 mb-2">Structurer sa réflexion</h4>
-                    <p className="text-sm text-gray-600">Organiser l'analyse par type, genre et nature</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-wellness-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Users className="w-8 h-8 text-wellness-600" />
-                    </div>
-                    <h4 className="font-semibold text-wellness-800 mb-2">S'entraîner au réel</h4>
-                    <p className="text-sm text-gray-600">Pratiquer sur des situations professionnelles concrètes</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
