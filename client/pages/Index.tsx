@@ -570,7 +570,161 @@ export default function Index() {
           </Card>
         </section>
 
-        {/* Bloc 6 - Quiz final */}
+        {/* Bloc 6 - Facteurs de risque et facteurs de protection */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
+            <h2 className="text-3xl font-bold text-medical-800">
+              Pourquoi certaines personnes développent un SPT et d'autres pas ?
+            </h2>
+          </div>
+
+          <Card className="p-8 border-medical-200 shadow-lg">
+            <CardContent className="space-y-8">
+
+              {/* Introduction */}
+              <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Toutes les personnes exposées à un événement traumatique ne développent pas un stress post-traumatique.
+                  La différence réside dans un équilibre entre <strong>facteurs de risque</strong> et <strong>facteurs de protection</strong>.
+                </p>
+              </div>
+
+              {/* Contenu détaillé */}
+              <div className="grid md:grid-cols-2 gap-8">
+
+                {/* Facteurs de risque */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-red-800 flex items-center gap-2">
+                    <AlertCircle className="w-6 h-6 text-red-600" />
+                    Facteurs de risque
+                  </h3>
+                  <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                    <ul className="space-y-3 text-gray-700">
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Antécédents de traumatismes</strong> (violence, accidents, conflits armés)</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Isolement social</strong> ou absence de soutien</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Exposition prolongée ou répétée</strong> à des événements traumatiques</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Absence de suivi</strong> ou de reconnaissance de la souffrance</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Facteurs de protection */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-green-800 flex items-center gap-2">
+                    <Shield className="w-6 h-6 text-green-600" />
+                    Facteurs de protection
+                  </h3>
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <ul className="space-y-3 text-gray-700">
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Réseau social solide</strong> (famille, amis, collègues)</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Hygiène de vie équilibrée</strong> (sommeil, alimentation, activité physique)</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Accès rapide à un soutien psychologique</strong> après l'événement</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span><strong>Stratégies d'adaptation efficaces</strong> (respiration, pleine conscience, routines)</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visuel comparatif */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-medical-800 text-center">
+                  Risque vs Protection
+                </h3>
+
+                <div className="bg-gradient-to-r from-red-100 via-gray-50 to-green-100 p-8 rounded-lg border border-gray-200">
+                  <div className="relative">
+                    {/* Balance visualization */}
+                    <div className="flex items-center justify-center mb-8">
+                      <div className="relative w-80 h-20">
+                        {/* Balance base */}
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-16 bg-gray-400"></div>
+                        {/* Balance beam */}
+                        <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-full h-1 bg-gray-600 rounded"></div>
+
+                        {/* Left side (risks) */}
+                        <div className="absolute top-0 left-8 text-center">
+                          <div className="w-16 h-12 bg-red-400 rounded mb-2 flex items-center justify-center">
+                            <AlertCircle className="w-6 h-6 text-white" />
+                          </div>
+                          <span className="text-xs font-medium text-red-800">Risques</span>
+                        </div>
+
+                        {/* Right side (protections) */}
+                        <div className="absolute top-0 right-8 text-center">
+                          <div className="w-16 h-12 bg-green-400 rounded mb-2 flex items-center justify-center">
+                            <Shield className="w-6 h-6 text-white" />
+                          </div>
+                          <span className="text-xs font-medium text-green-800">Protections</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Explanation */}
+                    <div className="text-center space-y-3">
+                      <p className="text-lg font-semibold text-gray-800">
+                        L'équilibre détermine la résilience
+                      </p>
+                      <div className="grid md:grid-cols-3 gap-4 text-sm">
+                        <div className="bg-red-100 p-3 rounded border border-red-200">
+                          <p className="font-medium text-red-800">Risques &gt; Protections</p>
+                          <p className="text-red-600">Vulnérabilité au SPT</p>
+                        </div>
+                        <div className="bg-yellow-100 p-3 rounded border border-yellow-200">
+                          <p className="font-medium text-yellow-800">Équilibre fragile</p>
+                          <p className="text-yellow-600">Vigilance recommandée</p>
+                        </div>
+                        <div className="bg-green-100 p-3 rounded border border-green-200">
+                          <p className="font-medium text-green-800">Protections &gt; Risques</p>
+                          <p className="text-green-600">Résilience favorisée</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Conclusion pédagogique */}
+              <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                  <Heart className="w-5 h-5" />
+                  Message important
+                </h4>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  <strong>Le développement d'un SPT n'est jamais lié à une faiblesse personnelle.</strong>
+                  Il dépend d'un ensemble de conditions. Identifier ces facteurs permet d'agir en amont
+                  et de renforcer les protections disponibles.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Bloc 7 - Quiz final */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
