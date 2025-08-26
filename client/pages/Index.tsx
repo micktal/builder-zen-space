@@ -468,66 +468,103 @@ export default function Index() {
           </div>
           
           <Card className="p-8 border-medical-200 shadow-lg">
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <div className="relative mx-auto w-48 h-32 bg-gradient-to-r from-medical-200 to-therapeutic-200 rounded-lg flex items-center justify-center">
-                      <Brain className="w-16 h-16 text-medical-600" />
-                      <div className="absolute top-2 left-4 w-4 h-4 bg-red-500 rounded-full animate-pulse" title="Amygdale hyperactive" />
-                      <div className="absolute bottom-2 right-4 w-4 h-4 bg-blue-500 rounded-full opacity-50" title="Hippocampe dérégulé" />
-                      <div className="absolute top-2 right-4 w-4 h-4 bg-green-500 rounded-full opacity-30" title="Cortex préfrontal affaibli" />
-                    </div>
-                    <p className="text-sm text-gray-600 mt-2">Schéma simplifié du cerveau</p>
+            <CardContent className="space-y-8">
+
+              {/* Introduction claire du concept */}
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
+                <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
+                  <AlertCircle className="w-6 h-6" />
+                  Que signifie "mode survie" ?
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Après un traumatisme, votre cerveau reste "bloqué" en mode urgence.
+                  Imaginez une alarme qui ne s'arrête jamais : elle sonne même quand il n'y a pas de danger.
+                </p>
+              </div>
+
+              {/* Analogie simple */}
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-3">Analogie simple :</h4>
+                <p className="text-gray-700 mb-4">
+                  <strong>Cerveau normal</strong> = Système de sécurité maison qui se déclenche quand un cambrioleur entre,
+                  puis se calme une fois le danger passé.
+                </p>
+                <p className="text-gray-700">
+                  <strong>Cerveau avec SPT</strong> = Système défaillant qui sonne sans arrêt, même pour un chat
+                  qui passe dans le jardin. Il ne fait plus la différence entre danger réel et fausse alerte.
+                </p>
+              </div>
+
+              {/* Ce que cela signifie concrètement */}
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-medical-800">Concrètement, cela veut dire :</h4>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-red-50 p-5 rounded-lg border border-red-200">
+                    <h5 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                      <Brain className="w-5 h-5" />
+                      Votre « radar à danger » est déréglé
+                    </h5>
+                    <ul className="text-sm text-gray-700 space-y-2">
+                      <li>• Vous sursautez pour un rien</li>
+                      <li>• Vous scannez constamment votre environnement</li>
+                      <li>• Votre corps reste tendu, prêt à fuir ou combattre</li>
+                      <li>• Vous ne vous sentez jamais vraiment en sécurité</li>
+                    </ul>
                   </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                      <span className="text-sm">Hyperactivité de l'amygdale (centre de la peur)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm">Mauvaise régulation par l'hippocampe (mémoire)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-                      <span className="text-sm">Production anormale de cortisol → boucle de stress</span>
-                    </div>
+
+                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                    <h5 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      Votre « machine à temps » est cassée
+                    </h5>
+                    <ul className="text-sm text-gray-700 space-y-2">
+                      <li>• Le passé traumatique revient comme s'il était présent</li>
+                      <li>• Votre cerveau confond « c'était » et « c'est maintenant »</li>
+                      <li>• Les flashbacks vous font revivre l'événement</li>
+                      <li>• Vous ne pouvez pas « ranger » le souvenir au passé</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-green-50 p-5 rounded-lg border border-green-200">
+                    <h5 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                      <Shield className="w-5 h-5" />
+                      Votre « bouclier émotionnel » est affaibli
+                    </h5>
+                    <ul className="text-sm text-gray-700 space-y-2">
+                      <li>• Difficulté à contrôler vos émotions</li>
+                      <li>• Colères soudaines ou tristesse intense</li>
+                      <li>• Sensation d'être débordé(e) facilement</li>
+                      <li>• Perte de la capacité à « relativiser »</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-purple-50 p-5 rounded-lg border border-purple-200">
+                    <h5 className="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      Votre « mode social » est coupé
+                    </h5>
+                    <ul className="text-sm text-gray-700 space-y-2">
+                      <li>• Besoin de fuir les gens et les situations</li>
+                      <li>• Impression que personne ne peut comprendre</li>
+                      <li>• Évitement de tout ce qui rappelle le trauma</li>
+                      <li>• Isolement pour se « protéger »</li>
+                    </ul>
                   </div>
                 </div>
-                
-                <div>
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="amygdale">
-                      <AccordionTrigger className="text-lg">Amygdale</AccordionTrigger>
-                      <AccordionContent>
-                        <p className="text-gray-700">
-                          Alarme trop sensible. L'amygdale reste en état d'hypervigilance constant, 
-                          déclenchant des réactions de peur même en l'absence de danger réel.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="hippocampe">
-                      <AccordionTrigger className="text-lg">Hippocampe</AccordionTrigger>
-                      <AccordionContent>
-                        <p className="text-gray-700">
-                          Mémoire déréglée qui confond présent et passé. Les souvenirs traumatiques 
-                          sont mal intégrés et resurviennent comme s'ils se reproduisaient.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="cortex">
-                      <AccordionTrigger className="text-lg">Cortex préfrontal</AccordionTrigger>
-                      <AccordionContent>
-                        <p className="text-gray-700">
-                          Baisse de contrôle rationnel. La capacité à analyser et contrôler 
-                          les émotions est diminuée, rendant difficile la régulation des réactions.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </div>
+              </div>
+
+              {/* Message d'espoir */}
+              <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                  <Heart className="w-5 h-5" />
+                  La bonne nouvelle
+                </h4>
+                <p className="text-gray-700">
+                  Ce "mode survie" n'est pas irréversible ! Avec un accompagnement adapté,
+                  votre cerveau peut réapprendre à faire la différence entre danger réel et fausse alerte.
+                  Les thérapies spécialisées aident à « réparer » ces mécanismes déréglés.
+                </p>
               </div>
             </CardContent>
           </Card>
