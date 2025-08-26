@@ -1138,7 +1138,7 @@ export default function Index() {
           </Card>
         </section>
 
-        {/* Bloc 8 - Clôture & ressources */}
+        {/* Bloc 9 - Clôture & ressources */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
