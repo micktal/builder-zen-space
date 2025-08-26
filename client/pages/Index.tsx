@@ -160,7 +160,7 @@ export default function Index() {
                   <div>
                     <h4 className="font-semibold text-medical-800">Vidéo recommandée</h4>
                     <p className="text-sm text-gray-600">
-                      Animation de 30 secondes : Deux collègues témoins d'un accident de voiture
+                      Animation de 30 secondes : Deux collègues t��moins d'un accident de voiture
                     </p>
                   </div>
                 </div>
@@ -386,9 +386,16 @@ export default function Index() {
           
           <Card className="p-8 border-medical-200 shadow-lg">
             <CardContent className="space-y-6">
-              <p className="text-lg text-gray-700 mb-6">
-                Le SPT regroupe 4 grands types de symptômes :
-              </p>
+              <div className="space-y-4 mb-6">
+                <p className="text-lg text-gray-700">
+                  Le SPT regroupe 4 grands types de symptômes qui se manifestent de façon interconnectée :
+                </p>
+                <p className="text-gray-600 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <strong>Important :</strong> Ces symptômes apparaissent généralement dans les 30 jours suivant le trauma,
+                  mais peuvent parfois surgir des mois plus tard. Ils persistent plus d'un mois et perturbent
+                  significativement la vie quotidienne, professionnelle ou sociale.
+                </p>
+              </div>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
