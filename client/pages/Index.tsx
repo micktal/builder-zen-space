@@ -1026,55 +1026,114 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 italic">Format : drag & drop sur 3 catégories</p>
-
-                {/* Catégories */}
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 min-h-32">
-                    <h4 className="font-semibold text-blue-800 mb-3 text-center">
-                      💼 Professionnel
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">
-                        Audit de conformité
-                      </div>
-                      <div className="bg-white p-2 rounded border text-center">
-                        Conflit avec collègue
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200 min-h-32">
-                    <h4 className="font-semibold text-green-800 mb-3 text-center">
-                      🏠 Personnel
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">
-                        Divorce en cours
-                      </div>
-                      <div className="bg-white p-2 rounded border text-center">
-                        Difficultés financières
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 min-h-32">
-                    <h4 className="font-semibold text-purple-800 mb-3 text-center">
-                      🌍 Environnemental
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">
-                        Bruit permanent chantier
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600 text-center">
-                    💡 Dans un vrai exercice interactif, vous pourriez glisser-déposer ces situations dans les bonnes catégories
+                <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
+                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-600 text-sm">
+                    Cliquez sur chaque situation pour la placer dans la bonne catégorie de stress.
                   </p>
                 </div>
+
+                {/* Situations à classer */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-800">Situations à classer :</h4>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {exercise2Situations.map((situation) => {
+                      const placement = exercise2Placements[situation.id];
+                      const isPlaced = placement !== undefined;
+
+                      return (
+                        <div key={situation.id} className="space-y-2">
+                          <p className="text-sm font-medium text-gray-700">{situation.text}</p>
+                          <div className="flex gap-2">
+                            {['professionnel', 'personnel', 'environnemental'].map((category) => {
+                              const isSelected = placement === category;
+                              const categoryColors = {
+                                professionnel: 'bg-blue-100 border-blue-300 text-blue-800',
+                                personnel: 'bg-green-100 border-green-300 text-green-800',
+                                environnemental: 'bg-purple-100 border-purple-300 text-purple-800'
+                              };
+
+                              return (
+                                <Button
+                                  key={category}
+                                  variant="outline"
+                                  size="sm"
+                                  className={isSelected ? categoryColors[category as keyof typeof categoryColors] : ''}
+                                  onClick={() => handleExercise2Placement(situation.id, category)}
+                                  disabled={exercise2ShowResults}
+                                >
+                                  {category}
+                                </Button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Bouton vérifier */}
+                {Object.keys(exercise2Placements).length === exercise2Situations.length && !exercise2ShowResults && (
+                  <Button onClick={checkExercise2Results} className="w-full">
+                    Vérifier mes réponses
+                  </Button>
+                )}
+
+                {/* Résultats */}
+                {exercise2ShowResults && (
+                  <div className="space-y-4">
+                    <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                      <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                        <Target className="w-5 h-5" />
+                        Résultats
+                      </h4>
+                      <p className="text-gray-700 mb-4">
+                        Score : <span className="font-bold text-medical-600">{getExercise2Score()} / {exercise2Situations.length}</span>
+                      </p>
+
+                      <div className="space-y-3">
+                        {exercise2Situations.map((situation) => {
+                          const userAnswer = exercise2Placements[situation.id];
+                          const isCorrect = userAnswer === situation.correctCategory;
+
+                          return (
+                            <div key={situation.id} className={`p-3 rounded border ${
+                              isCorrect ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                            }`}>
+                              <div className="flex items-start gap-2">
+                                {isCorrect ? (
+                                  <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                                ) : (
+                                  <XCircle className="w-4 h-4 text-red-600 mt-0.5" />
+                                )}
+                                <div className="flex-1">
+                                  <p className="text-sm font-medium">{situation.text}</p>
+                                  <p className="text-xs text-gray-600">
+                                    Votre réponse : {userAnswer} |
+                                    Bonne réponse : {situation.correctCategory}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <Button
+                        onClick={() => {
+                          setExercise2Placements({});
+                          setExercise2ShowResults(false);
+                        }}
+                        variant="outline"
+                        size="sm"
+                        className="mt-4"
+                      >
+                        Recommencer l'exercice
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
