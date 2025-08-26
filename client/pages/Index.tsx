@@ -480,11 +480,19 @@ export default function Index() {
               </div>
               
               <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                <h5 className="font-semibold text-yellow-800 mb-2 flex items-center gap-2">
-                  ⚡ Déclencheurs possibles
+                <h5 className="font-semibold text-yellow-800 mb-3 flex items-center gap-2">
+                  ��� Principaux déclencheurs
                 </h5>
-                <p className="text-sm text-yellow-700">
-                  Sons (sirènes, explosions), odeurs, anniversaires de l'événement, situations similaires
+                <div className="space-y-2 text-sm text-yellow-800">
+                  <p><strong>Sensoriels :</strong> Sons (sirènes, explosions), odeurs spécifiques, textures, lumières</p>
+                  <p><strong>Temporels :</strong> Anniversaires du trauma, heures précises, saisons</p>
+                  <p><strong>Situationnels :</strong> Lieux similaires, foules, espaces confinés, hauteurs</p>
+                  <p><strong>Émotionnels :</strong> Stress, fatigue, disputes, sentiment d'impuissance</p>
+                  <p><strong>Sociaux :</strong> Récits d'accidents, films violents, actualités traumatisantes</p>
+                </div>
+                <p className="text-xs text-yellow-600 mt-3 italic">
+                  Ces déclencheurs peuvent provoquer une réaction instantanée et disproportionnée,
+                  comme si le danger était immédiat.
                 </p>
               </div>
             </CardContent>
