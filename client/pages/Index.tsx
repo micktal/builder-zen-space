@@ -142,7 +142,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 1 – Introduction & accroche
+              Quand le stress devient traumatisme
             </h2>
           </div>
           
@@ -174,7 +174,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 2 – Définition & historique
+              De la guerre aux bureaux : l'évolution du SPT
             </h2>
           </div>
           
@@ -245,7 +245,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 3 – Panique, anxiété, peur… ou SPT ?
+              Stress normal ou signal d'alarme ?
             </h2>
           </div>
           
@@ -338,7 +338,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 4 – Les caractéristiques du SPT
+              Reconnaître les signes invisibles
             </h2>
           </div>
           
@@ -427,7 +427,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 5 – Que se passe-t-il dans le cerveau ?
+              Votre cerveau en mode survie
             </h2>
           </div>
           
@@ -502,7 +502,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 6 – Vérifiez vos acquis
+              Testez vos connaissances
             </h2>
           </div>
           
@@ -610,7 +610,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Bloc 7 – Clôture & ressources
+              Vers la guérison : ressources et espoir
             </h2>
           </div>
           
