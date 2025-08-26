@@ -1277,7 +1277,12 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 italic">Format : scénario ramifié avec choix multiples</p>
+                <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
+                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-600 text-sm">
+                    Répondez aux questions dans l'ordre. Chaque réponse débloque la question suivante.
+                  </p>
+                </div>
 
                 {/* Scénario principal */}
                 <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
@@ -1289,62 +1294,121 @@ export default function Index() {
                   </p>
                 </div>
 
-                {/* Questions en séquence */}
-                <div className="space-y-8">
+                {/* Questions progressives */}
+                <div className="space-y-6">
+                  {exercise4Questions.map((question, index) => {
+                    const isAnswered = exercise4Answers[question.id] !== undefined;
+                    const canAnswer = index === 0 || exercise4Answers[exercise4Questions[index - 1].id] !== undefined;
+                    const userAnswer = exercise4Answers[question.id];
+                    const isCorrect = userAnswer === question.correctAnswer;
 
-                  {/* Question 1 */}
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                    <h5 className="font-semibold text-blue-800 mb-4">Question 1 : De quel type de stress s'agit-il ?</h5>
-                    <div className="grid md:grid-cols-3 gap-3">
-                      <Button variant="outline" className="h-auto p-3">Aigu</Button>
-                      <Button variant="outline" className="h-auto p-3">Chronique</Button>
-                      <Button variant="outline" className="h-auto p-3 bg-green-100 border-green-300">
-                        ✓ Post-traumatique
-                      </Button>
-                    </div>
-                  </div>
+                    const bgColors = ['bg-blue-50 border-blue-200', 'bg-green-50 border-green-200', 'bg-purple-50 border-purple-200'];
+                    const titleColors = ['text-blue-800', 'text-green-800', 'text-purple-800'];
 
-                  {/* Question 2 */}
-                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                    <h5 className="font-semibold text-green-800 mb-4">Question 2 : Quels signaux repérez-vous dans ce témoignage ?</h5>
-                    <div className="space-y-3">
-                      <label className="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" checked className="rounded" readOnly />
-                        <span>✓ Physiques (sommeil)</span>
-                      </label>
-                      <label className="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" checked className="rounded" readOnly />
-                        <span>✓ Émotionnels (tension)</span>
-                      </label>
-                      <label className="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" checked className="rounded" readOnly />
-                        <span>✓ Cognitifs (reviviscences)</span>
-                      </label>
-                      <p className="text-sm text-green-700 font-medium mt-3">
-                        → Réponse : combinaison des trois
-                      </p>
-                    </div>
-                  </div>
+                    return (
+                      <div key={question.id} className={`p-6 rounded-lg border ${canAnswer ? bgColors[index] : 'bg-gray-50 border-gray-200 opacity-50'}`}>
+                        <h5 className={`font-semibold mb-4 ${canAnswer ? titleColors[index] : 'text-gray-500'}`}>
+                          Question {question.id} : {question.question}
+                        </h5>
 
-                  {/* Question 3 */}
-                  <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
-                    <h5 className="font-semibold text-purple-800 mb-4">Question 3 : Quelle serait la meilleure attitude ?</h5>
-                    <div className="space-y-3">
-                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4">
-                        ❌ Lui conseiller de "tenir le coup"
-                      </Button>
-                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4 bg-green-100 border-green-300">
-                        ✓ L'orienter vers une ressource interne/externe (médecin, cellule psy)
-                      </Button>
-                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4">
-                        ❌ Ignorer la situation pour éviter de "raviver le trauma"
-                      </Button>
-                    </div>
-                    <p className="text-sm text-purple-700 font-medium mt-3">
-                      → Réponse : Orientation vers ressources
-                    </p>
-                  </div>
+                        {canAnswer ? (
+                          <div className="space-y-3">
+                            {question.options.map((option, optionIndex) => {
+                              const isSelected = userAnswer === option;
+                              let buttonClass = "";
+
+                              if (isAnswered) {
+                                if (isSelected && isCorrect) {
+                                  buttonClass = "bg-green-100 border-green-300 text-green-800";
+                                } else if (isSelected && !isCorrect) {
+                                  buttonClass = "bg-red-100 border-red-300 text-red-800";
+                                } else if (option === question.correctAnswer && !isCorrect) {
+                                  buttonClass = "bg-green-100 border-green-300 text-green-800";
+                                } else {
+                                  buttonClass = "opacity-50";
+                                }
+                              }
+
+                              return (
+                                <Button
+                                  key={optionIndex}
+                                  variant="outline"
+                                  className={`w-full text-left justify-start h-auto p-4 ${buttonClass}`}
+                                  onClick={() => handleExercise4Answer(question.id, option)}
+                                  disabled={isAnswered}
+                                >
+                                  {isAnswered && isSelected && isCorrect && "✓ "}
+                                  {isAnswered && isSelected && !isCorrect && "❌ "}
+                                  {isAnswered && !isSelected && option === question.correctAnswer && "✓ "}
+                                  {option}
+                                </Button>
+                              );
+                            })}
+
+                            {/* Feedback pour chaque question */}
+                            {isAnswered && (
+                              <div className={`p-4 rounded-lg border mt-4 ${
+                                isCorrect ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                              }`}>
+                                <div className="flex items-start gap-3">
+                                  {isCorrect ? (
+                                    <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                                  ) : (
+                                    <XCircle className="w-5 h-5 text-red-600 mt-0.5" />
+                                  )}
+                                  <div>
+                                    <p className={`font-medium mb-2 ${
+                                      isCorrect ? 'text-green-800' : 'text-red-800'
+                                    }`}>
+                                      {isCorrect ? 'Bonne réponse !' : 'Réponse incorrecte'}
+                                    </p>
+                                    <p className="text-sm text-gray-700">
+                                      {question.explanation}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-gray-500 italic">
+                            Répondez à la question précédente pour débloquer celle-ci.
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
+
+                {/* Résultat final */}
+                {Object.keys(exercise4Answers).length === exercise4Questions.length && (
+                  <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                    <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                      <Target className="w-5 h-5" />
+                      Résultat de la simulation
+                    </h4>
+                    <p className="text-gray-700 mb-4">
+                      Score : <span className="font-bold text-medical-600">{getExercise4Score()} / {exercise4Questions.length}</span>
+                    </p>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p>• <strong>Identification du stress :</strong> {exercise4Answers[1] === exercise4Questions[0].correctAnswer ? '✅' : '❌'}</p>
+                      <p>• <strong>Reconnaissance des signaux :</strong> {exercise4Answers[2] === exercise4Questions[1].correctAnswer ? '✅' : '❌'}</p>
+                      <p>• <strong>Attitude managériale :</strong> {exercise4Answers[3] === exercise4Questions[2].correctAnswer ? '✅' : '❌'}</p>
+                    </div>
+
+                    <Button
+                      onClick={() => {
+                        setExercise4Answers({});
+                        setExercise4ShowResults(false);
+                      }}
+                      variant="outline"
+                      size="sm"
+                      className="mt-4"
+                    >
+                      Recommencer la simulation
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
