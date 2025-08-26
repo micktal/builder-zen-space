@@ -1146,50 +1146,125 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 italic">Format : glisser-déposer vers 4 colonnes</p>
+                <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
+                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-600 text-sm">
+                    Classez chaque symptôme dans la bonne catégorie : physique, émotionnel, cognitif ou comportemental.
+                  </p>
+                </div>
 
-                {/* 4 colonnes de symptômes */}
-                <div className="grid md:grid-cols-4 gap-4">
-                  <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                    <h4 className="font-semibold text-red-800 mb-3 text-center">
-                      🫀 Physiques
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">Insomnie</div>
-                      <div className="bg-white p-2 rounded border text-center">Tensions musculaires</div>
-                    </div>
-                  </div>
+                {/* Symptômes à classer */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-800">Symptômes à classer :</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {exercise3Symptoms.map((symptom) => {
+                      const placement = exercise3Placements[symptom.id];
 
-                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                    <h4 className="font-semibold text-yellow-800 mb-3 text-center">
-                      😔 Émotionnels
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">Irritabilité</div>
-                      <div className="bg-white p-2 rounded border text-center">Perte de motivation</div>
-                    </div>
-                  </div>
+                      return (
+                        <div key={symptom.id} className="space-y-2">
+                          <p className="text-sm font-medium text-gray-700">{symptom.text}</p>
+                          <div className="grid grid-cols-2 gap-1 text-xs">
+                            {['physique', 'emotionnel', 'cognitif', 'comportemental'].map((category) => {
+                              const isSelected = placement === category;
+                              const categoryColors = {
+                                physique: 'bg-red-100 border-red-300 text-red-800',
+                                emotionnel: 'bg-yellow-100 border-yellow-300 text-yellow-800',
+                                cognitif: 'bg-blue-100 border-blue-300 text-blue-800',
+                                comportemental: 'bg-purple-100 border-purple-300 text-purple-800'
+                              };
 
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                    <h4 className="font-semibold text-blue-800 mb-3 text-center">
-                      🧠 Cognitifs
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">Trous de mémoire</div>
-                      <div className="bg-white p-2 rounded border text-center">Erreurs répétées</div>
-                    </div>
-                  </div>
-
-                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                    <h4 className="font-semibold text-purple-800 mb-3 text-center">
-                      🎭 Comportementaux
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="bg-white p-2 rounded border text-center">Isolement</div>
-                      <div className="bg-white p-2 rounded border text-center">Consommation d'alcool</div>
-                    </div>
+                              return (
+                                <Button
+                                  key={category}
+                                  variant="outline"
+                                  size="sm"
+                                  className={`h-8 text-xs ${isSelected ? categoryColors[category as keyof typeof categoryColors] : ''}`}
+                                  onClick={() => handleExercise3Placement(symptom.id, category)}
+                                  disabled={exercise3ShowResults}
+                                >
+                                  {category}
+                                </Button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
+
+                {/* Bouton vérifier */}
+                {Object.keys(exercise3Placements).length === exercise3Symptoms.length && !exercise3ShowResults && (
+                  <Button onClick={checkExercise3Results} className="w-full">
+                    Vérifier mes réponses
+                  </Button>
+                )}
+
+                {/* Résultats */}
+                {exercise3ShowResults && (
+                  <div className="space-y-4">
+                    <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                      <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                        <Target className="w-5 h-5" />
+                        Résultats
+                      </h4>
+                      <p className="text-gray-700 mb-4">
+                        Score : <span className="font-bold text-medical-600">{getExercise3Score()} / {exercise3Symptoms.length}</span>
+                      </p>
+
+                      {/* Résultats par catégorie */}
+                      <div className="grid md:grid-cols-4 gap-4 mb-4">
+                        {['physique', 'emotionnel', 'cognitif', 'comportemental'].map((category) => {
+                          const categorySymbols = {
+                            physique: '🫀',
+                            emotionnel: '😔',
+                            cognitif: '🧠',
+                            comportemental: '🎭'
+                          };
+
+                          const categoryColors = {
+                            physique: 'bg-red-50 border-red-200',
+                            emotionnel: 'bg-yellow-50 border-yellow-200',
+                            cognitif: 'bg-blue-50 border-blue-200',
+                            comportemental: 'bg-purple-50 border-purple-200'
+                          };
+
+                          const correctSymptoms = exercise3Symptoms.filter(s => s.correctCategory === category);
+                          const userSymptoms = exercise3Symptoms.filter(s => exercise3Placements[s.id] === category);
+
+                          return (
+                            <div key={category} className={`p-3 rounded border ${categoryColors[category as keyof typeof categoryColors]}`}>
+                              <h5 className="font-medium text-sm mb-2">
+                                {categorySymbols[category as keyof typeof categorySymbols]} {category}
+                              </h5>
+                              <div className="space-y-1 text-xs">
+                                {correctSymptoms.map((symptom) => {
+                                  const userPlaced = exercise3Placements[symptom.id] === category;
+                                  return (
+                                    <div key={symptom.id} className={`p-1 rounded ${userPlaced ? 'bg-green-100' : 'bg-red-100'}`}>
+                                      {userPlaced ? '✓' : '❌'} {symptom.text}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <Button
+                        onClick={() => {
+                          setExercise3Placements({});
+                          setExercise3ShowResults(false);
+                        }}
+                        variant="outline"
+                        size="sm"
+                      >
+                        Recommencer l'exercice
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
