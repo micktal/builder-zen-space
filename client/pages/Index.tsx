@@ -73,7 +73,7 @@ export default function Index() {
       question: "Quels sont les 4 grands types de symptômes du SPT ?",
       type: "multiple" as const,
       options: [
-        "Reviviscences, Évitement, Hypervigilance, Altérations émotionnelles",
+        "Reviviscences, ��vitement, Hypervigilance, Altérations émotionnelles",
         "Panique, Anxiété, Peur, Dépression",
         "Tristesse, Colère, Fatigue, Confusion",
         "Insomnie, Cauchemars, Stress, Isolement"
@@ -397,49 +397,8 @@ export default function Index() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="relative bg-gradient-to-br from-medical-100 to-therapeutic-100 p-8 rounded-lg">
-                    <div className="text-center mb-6">
-                      <h4 className="text-xl font-semibold text-medical-800 mb-4">Zones de symptômes</h4>
-                      <div className="relative mx-auto w-48 h-64 bg-medical-200 rounded-full">
-                        {/* Head hotspot */}
-                        <button 
-                          className="absolute top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-medical-500 rounded-full hover:bg-medical-600 transition-colors"
-                          title="Reviviscences (flashbacks, cauchemars)"
-                        >
-                          <Brain className="w-4 h-4 text-white mx-auto" />
-                        </button>
-                        
-                        {/* Chest hotspot */}
-                        <button 
-                          className="absolute top-20 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-therapeutic-500 rounded-full hover:bg-therapeutic-600 transition-colors"
-                          title="Hypervigilance (sursauts, anxiété constante)"
-                        >
-                          <Heart className="w-4 h-4 text-white mx-auto" />
-                        </button>
-                        
-                        {/* Eyes hotspot */}
-                        <button 
-                          className="absolute top-12 left-8 w-6 h-6 bg-wellness-500 rounded-full hover:bg-wellness-600 transition-colors"
-                          title="Évitement (personnes, lieux, pensées)"
-                        >
-                          <Eye className="w-3 h-3 text-white mx-auto" />
-                        </button>
-                        
-                        {/* Ears hotspot */}
-                        <button 
-                          className="absolute top-12 right-8 w-6 h-6 bg-wellness-500 rounded-full hover:bg-wellness-600 transition-colors"
-                          title="Altérations émotionnelles et cognitives"
-                        >
-                          <Ear className="w-3 h-3 text-white mx-auto" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
                     <h5 className="font-semibold text-medical-800 mb-3">1. Reviviscences</h5>
                     <div className="space-y-2 text-sm text-gray-700">
