@@ -49,6 +49,51 @@ export default function Index() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState<(boolean | string)[]>([]);
   const [showResults, setShowResults] = useState(false);
+
+  // Exercise 1 state
+  const [exercise1Answers, setExercise1Answers] = useState<{[key: number]: string}>({});
+  const [exercise1Feedback, setExercise1Feedback] = useState<{[key: number]: boolean}>({});
+
+  const exercise1Scenarios = [
+    {
+      id: 1,
+      title: "Scénario 1",
+      description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère mais retombe après la mission.",
+      question: "S'agit-il de stress aigu, chronique ou post-traumatique ?",
+      correctAnswer: "aigu",
+      explanation: "Correct ! Il s'agit d'un stress aigu car la réaction est immédiate, intense mais brève, et se résout une fois la situation passée.",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      titleColor: "text-blue-800"
+    },
+    {
+      id: 2,
+      title: "Scénario 2",
+      description: "Un employé subit depuis 6 mois une surcharge de travail sans repos.",
+      question: "Quel type de stress identifiez-vous ?",
+      correctAnswer: "chronique",
+      explanation: "Correct ! Il s'agit d'un stress chronique car l'exposition au stresseur (surcharge) dure depuis plusieurs mois sans interruption.",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+      titleColor: "text-orange-800"
+    },
+    {
+      id: 3,
+      title: "Scénario 3",
+      description: "Une victime d'agression revit l'événement en cauchemars et flashbacks, 2 mois après.",
+      question: "De quel type de stress s'agit-il ?",
+      correctAnswer: "post-traumatique",
+      explanation: "Correct ! Il s'agit d'un stress post-traumatique car les symptômes (reviviscences) persistent plus d'un mois après l'événement traumatique.",
+      bgColor: "bg-red-50",
+      borderColor: "border-red-200",
+      titleColor: "text-red-800"
+    }
+  ];
+
+  const handleExercise1Answer = (scenarioId: number, answer: string, correctAnswer: string) => {
+    setExercise1Answers(prev => ({ ...prev, [scenarioId]: answer }));
+    setExercise1Feedback(prev => ({ ...prev, [scenarioId]: answer === correctAnswer }));
+  };
   
   const questions = [
     {
@@ -744,58 +789,127 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 italic">Format : scénario + QCM</p>
+                <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
+                  <p className="text-gray-700 font-medium mb-2">📋 Instructions</p>
+                  <p className="text-gray-600 text-sm">
+                    Lisez chaque scénario et cliquez sur le type de stress que vous identifiez.
+                    Vous recevrez un feedback immédiat !
+                  </p>
+                </div>
 
                 <div className="space-y-6">
-                  {/* Scénario 1 */}
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                    <h4 className="font-semibold text-blue-800 mb-3">Scénario 1</h4>
-                    <p className="text-gray-700 mb-4">
-                      Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère
-                      mais retombe après la mission.
-                    </p>
-                    <p className="font-medium text-gray-800 mb-3">S'agit-il de stress aigu, chronique ou post-traumatique ?</p>
-                    <div className="flex gap-3">
-                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
-                        ✓ Stress aigu
-                      </Button>
-                      <Button variant="outline" size="sm">Stress chronique</Button>
-                      <Button variant="outline" size="sm">Stress post-traumatique</Button>
-                    </div>
-                  </div>
+                  {exercise1Scenarios.map((scenario) => {
+                    const userAnswer = exercise1Answers[scenario.id];
+                    const isAnswered = userAnswer !== undefined;
+                    const isCorrect = exercise1Feedback[scenario.id];
 
-                  {/* Scénario 2 */}
-                  <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
-                    <h4 className="font-semibold text-orange-800 mb-3">Scénario 2</h4>
-                    <p className="text-gray-700 mb-4">
-                      Un employé subit depuis 6 mois une surcharge de travail sans repos.
-                    </p>
-                    <p className="font-medium text-gray-800 mb-3">Quel type de stress identifiez-vous ?</p>
-                    <div className="flex gap-3">
-                      <Button variant="outline" size="sm">Stress aigu</Button>
-                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
-                        ✓ Stress chronique
-                      </Button>
-                      <Button variant="outline" size="sm">Stress post-traumatique</Button>
-                    </div>
-                  </div>
+                    return (
+                      <div key={scenario.id} className={`${scenario.bgColor} p-6 rounded-lg border ${scenario.borderColor}`}>
+                        <h4 className={`font-semibold ${scenario.titleColor} mb-3`}>{scenario.title}</h4>
+                        <p className="text-gray-700 mb-4">
+                          {scenario.description}
+                        </p>
+                        <p className="font-medium text-gray-800 mb-4">{scenario.question}</p>
 
-                  {/* Scénario 3 */}
-                  <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                    <h4 className="font-semibold text-red-800 mb-3">Scénario 3</h4>
-                    <p className="text-gray-700 mb-4">
-                      Une victime d'agression revit l'événement en cauchemars et flashbacks, 2 mois après.
-                    </p>
-                    <p className="font-medium text-gray-800 mb-3">De quel type de stress s'agit-il ?</p>
-                    <div className="flex gap-3">
-                      <Button variant="outline" size="sm">Stress aigu</Button>
-                      <Button variant="outline" size="sm">Stress chronique</Button>
-                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
-                        ✓ Stress post-traumatique
-                      </Button>
-                    </div>
-                  </div>
+                        <div className="space-y-4">
+                          <div className="flex gap-3 flex-wrap">
+                            {['aigu', 'chronique', 'post-traumatique'].map((option) => {
+                              const isSelected = userAnswer === option;
+                              const isCorrectOption = option === scenario.correctAnswer;
+
+                              let buttonClass = "";
+                              if (isAnswered) {
+                                if (isSelected && isCorrect) {
+                                  buttonClass = "bg-green-100 border-green-300 text-green-800";
+                                } else if (isSelected && !isCorrect) {
+                                  buttonClass = "bg-red-100 border-red-300 text-red-800";
+                                } else if (isCorrectOption && !isCorrect) {
+                                  buttonClass = "bg-green-100 border-green-300 text-green-800";
+                                } else {
+                                  buttonClass = "opacity-50";
+                                }
+                              }
+
+                              return (
+                                <Button
+                                  key={option}
+                                  variant="outline"
+                                  size="sm"
+                                  className={buttonClass}
+                                  onClick={() => handleExercise1Answer(scenario.id, option, scenario.correctAnswer)}
+                                  disabled={isAnswered}
+                                >
+                                  {isAnswered && isSelected && isCorrect && "✓ "}
+                                  {isAnswered && isSelected && !isCorrect && "❌ "}
+                                  {isAnswered && !isSelected && isCorrectOption && "✓ "}
+                                  Stress {option}
+                                </Button>
+                              );
+                            })}
+                          </div>
+
+                          {/* Feedback */}
+                          {isAnswered && (
+                            <div className={`p-4 rounded-lg border ${
+                              isCorrect
+                                ? 'bg-green-50 border-green-200'
+                                : 'bg-red-50 border-red-200'
+                            }`}>
+                              <div className="flex items-start gap-3">
+                                {isCorrect ? (
+                                  <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                                ) : (
+                                  <XCircle className="w-5 h-5 text-red-600 mt-0.5" />
+                                )}
+                                <div>
+                                  <p className={`font-medium mb-2 ${
+                                    isCorrect ? 'text-green-800' : 'text-red-800'
+                                  }`}>
+                                    {isCorrect ? 'Bonne réponse !' : 'Réponse incorrecte'}
+                                  </p>
+                                  <p className="text-sm text-gray-700">
+                                    {isCorrect
+                                      ? scenario.explanation
+                                      : `La bonne réponse était "Stress ${scenario.correctAnswer}". ${scenario.explanation}`
+                                    }
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
+
+                {/* Score global */}
+                {Object.keys(exercise1Answers).length === exercise1Scenarios.length && (
+                  <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                    <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                      <Target className="w-5 h-5" />
+                      Résultat de l'exercice
+                    </h4>
+                    <p className="text-gray-700">
+                      Vous avez obtenu{' '}
+                      <span className="font-bold text-medical-600">
+                        {Object.values(exercise1Feedback).filter(Boolean).length} / {exercise1Scenarios.length}
+                      </span>
+                      {' '}bonne(s) réponse(s) !
+                    </p>
+                    <Button
+                      onClick={() => {
+                        setExercise1Answers({});
+                        setExercise1Feedback({});
+                      }}
+                      variant="outline"
+                      size="sm"
+                      className="mt-3"
+                    >
+                      Recommencer l'exercice
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
