@@ -724,7 +724,313 @@ export default function Index() {
           </Card>
         </section>
 
-        {/* Bloc 7 - Quiz final */}
+        {/* Bloc 7 - Simulations interactives */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
+            <h2 className="text-3xl font-bold text-medical-800">
+              Simulations interactives pour Module 4
+            </h2>
+          </div>
+
+          <div className="space-y-12">
+
+            {/* Exercice 1 - Identifier le type de stress */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
+                  <Target className="w-6 h-6" />
+                  Exercice 1 – Identifier le type de stress
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600 italic">Format : scénario + QCM</p>
+
+                <div className="space-y-6">
+                  {/* Scénario 1 */}
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-3">Scénario 1</h4>
+                    <p className="text-gray-700 mb-4">
+                      Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère
+                      mais retombe après la mission.
+                    </p>
+                    <p className="font-medium text-gray-800 mb-3">S'agit-il de stress aigu, chronique ou post-traumatique ?</p>
+                    <div className="flex gap-3">
+                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
+                        ✓ Stress aigu
+                      </Button>
+                      <Button variant="outline" size="sm">Stress chronique</Button>
+                      <Button variant="outline" size="sm">Stress post-traumatique</Button>
+                    </div>
+                  </div>
+
+                  {/* Scénario 2 */}
+                  <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
+                    <h4 className="font-semibold text-orange-800 mb-3">Scénario 2</h4>
+                    <p className="text-gray-700 mb-4">
+                      Un employé subit depuis 6 mois une surcharge de travail sans repos.
+                    </p>
+                    <p className="font-medium text-gray-800 mb-3">Quel type de stress identifiez-vous ?</p>
+                    <div className="flex gap-3">
+                      <Button variant="outline" size="sm">Stress aigu</Button>
+                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
+                        ✓ Stress chronique
+                      </Button>
+                      <Button variant="outline" size="sm">Stress post-traumatique</Button>
+                    </div>
+                  </div>
+
+                  {/* Scénario 3 */}
+                  <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                    <h4 className="font-semibold text-red-800 mb-3">Scénario 3</h4>
+                    <p className="text-gray-700 mb-4">
+                      Une victime d'agression revit l'événement en cauchemars et flashbacks, 2 mois après.
+                    </p>
+                    <p className="font-medium text-gray-800 mb-3">De quel type de stress s'agit-il ?</p>
+                    <div className="flex gap-3">
+                      <Button variant="outline" size="sm">Stress aigu</Button>
+                      <Button variant="outline" size="sm">Stress chronique</Button>
+                      <Button variant="outline" size="sm" className="bg-green-100 border-green-300">
+                        ✓ Stress post-traumatique
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Exercice 2 - Identifier le genre du stress */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
+                  <Users className="w-6 h-6" />
+                  Exercice 2 – Identifier le genre du stress
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600 italic">Format : drag & drop sur 3 catégories</p>
+
+                {/* Catégories */}
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 min-h-32">
+                    <h4 className="font-semibold text-blue-800 mb-3 text-center">
+                      💼 Professionnel
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">
+                        Audit de conformité
+                      </div>
+                      <div className="bg-white p-2 rounded border text-center">
+                        Conflit avec collègue
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200 min-h-32">
+                    <h4 className="font-semibold text-green-800 mb-3 text-center">
+                      🏠 Personnel
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">
+                        Divorce en cours
+                      </div>
+                      <div className="bg-white p-2 rounded border text-center">
+                        Difficultés financières
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 min-h-32">
+                    <h4 className="font-semibold text-purple-800 mb-3 text-center">
+                      🌍 Environnemental
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">
+                        Bruit permanent chantier
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <p className="text-sm text-gray-600 text-center">
+                    💡 Dans un vrai exercice interactif, vous pourriez glisser-déposer ces situations dans les bonnes catégories
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Exercice 3 - Identifier la nature des symptômes */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
+                  <Brain className="w-6 h-6" />
+                  Exercice 3 – Identifier la nature des symptômes
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600 italic">Format : glisser-déposer vers 4 colonnes</p>
+
+                {/* 4 colonnes de symptômes */}
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <h4 className="font-semibold text-red-800 mb-3 text-center">
+                      🫀 Physiques
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">Insomnie</div>
+                      <div className="bg-white p-2 rounded border text-center">Tensions musculaires</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-yellow-800 mb-3 text-center">
+                      😔 Émotionnels
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">Irritabilité</div>
+                      <div className="bg-white p-2 rounded border text-center">Perte de motivation</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-3 text-center">
+                      🧠 Cognitifs
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">Trous de mémoire</div>
+                      <div className="bg-white p-2 rounded border text-center">Erreurs répétées</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-800 mb-3 text-center">
+                      🎭 Comportementaux
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-white p-2 rounded border text-center">Isolement</div>
+                      <div className="bg-white p-2 rounded border text-center">Consommation d'alcool</div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Exercice 4 - Simulation intégrée */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
+                  <Users className="w-6 h-6" />
+                  Exercice 4 – Simulation intégrée (mise en situation)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-gray-600 italic">Format : scénario ramifié avec choix multiples</p>
+
+                {/* Scénario principal */}
+                <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
+                  <h4 className="font-semibold text-medical-800 mb-4">💼 Mise en situation</h4>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    "Vous êtes manager. Un collaborateur vous confie :<br />
+                    <em>'Depuis quelques semaines je dors très mal, je suis constamment tendu,
+                    et je me surprends à revoir sans cesse les images de l'agression que j'ai subie l'an dernier.'"</em>
+                  </p>
+                </div>
+
+                {/* Questions en séquence */}
+                <div className="space-y-8">
+
+                  {/* Question 1 */}
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h5 className="font-semibold text-blue-800 mb-4">Question 1 : De quel type de stress s'agit-il ?</h5>
+                    <div className="grid md:grid-cols-3 gap-3">
+                      <Button variant="outline" className="h-auto p-3">Aigu</Button>
+                      <Button variant="outline" className="h-auto p-3">Chronique</Button>
+                      <Button variant="outline" className="h-auto p-3 bg-green-100 border-green-300">
+                        ✓ Post-traumatique
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Question 2 */}
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <h5 className="font-semibold text-green-800 mb-4">Question 2 : Quels signaux repérez-vous dans ce témoignage ?</h5>
+                    <div className="space-y-3">
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" checked className="rounded" readOnly />
+                        <span>✓ Physiques (sommeil)</span>
+                      </label>
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" checked className="rounded" readOnly />
+                        <span>✓ Émotionnels (tension)</span>
+                      </label>
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" checked className="rounded" readOnly />
+                        <span>✓ Cognitifs (reviviscences)</span>
+                      </label>
+                      <p className="text-sm text-green-700 font-medium mt-3">
+                        → Réponse : combinaison des trois
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Question 3 */}
+                  <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+                    <h5 className="font-semibold text-purple-800 mb-4">Question 3 : Quelle serait la meilleure attitude ?</h5>
+                    <div className="space-y-3">
+                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4">
+                        ❌ Lui conseiller de "tenir le coup"
+                      </Button>
+                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4 bg-green-100 border-green-300">
+                        ✓ L'orienter vers une ressource interne/externe (médecin, cellule psy)
+                      </Button>
+                      <Button variant="outline" className="w-full text-left justify-start h-auto p-4">
+                        ❌ Ignorer la situation pour éviter de "raviver le trauma"
+                      </Button>
+                    </div>
+                    <p className="text-sm text-purple-700 font-medium mt-3">
+                      → Réponse : Orientation vers ressources
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Objectifs pédagogiques */}
+            <Card className="p-8 border-medical-200 shadow-lg bg-gradient-to-r from-medical-50 to-wellness-50">
+              <CardContent>
+                <h3 className="text-xl font-bold text-medical-800 mb-4 flex items-center gap-2">
+                  🎯 Objectifs de ces exercices
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-medical-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Target className="w-8 h-8 text-medical-600" />
+                    </div>
+                    <h4 className="font-semibold text-medical-800 mb-2">Classifier les situations</h4>
+                    <p className="text-sm text-gray-600">Apprendre à distinguer les différents types de stress</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-therapeutic-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Brain className="w-8 h-8 text-therapeutic-600" />
+                    </div>
+                    <h4 className="font-semibold text-therapeutic-800 mb-2">Structurer sa réflexion</h4>
+                    <p className="text-sm text-gray-600">Organiser l'analyse par type, genre et nature</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-wellness-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Users className="w-8 h-8 text-wellness-600" />
+                    </div>
+                    <h4 className="font-semibold text-wellness-800 mb-2">S'entraîner au réel</h4>
+                    <p className="text-sm text-gray-600">Pratiquer sur des situations professionnelles concrètes</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Bloc 8 - Quiz final */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
