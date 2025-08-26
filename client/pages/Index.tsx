@@ -54,6 +54,18 @@ export default function Index() {
   const [exercise1Answers, setExercise1Answers] = useState<{[key: number]: string}>({});
   const [exercise1Feedback, setExercise1Feedback] = useState<{[key: number]: boolean}>({});
 
+  // Exercise 2 state
+  const [exercise2Placements, setExercise2Placements] = useState<{[key: string]: string}>({});
+  const [exercise2ShowResults, setExercise2ShowResults] = useState(false);
+
+  // Exercise 3 state
+  const [exercise3Placements, setExercise3Placements] = useState<{[key: string]: string}>({});
+  const [exercise3ShowResults, setExercise3ShowResults] = useState(false);
+
+  // Exercise 4 state
+  const [exercise4Answers, setExercise4Answers] = useState<{[key: number]: string}>({});
+  const [exercise4ShowResults, setExercise4ShowResults] = useState(false);
+
   const exercise1Scenarios = [
     {
       id: 1,
@@ -93,6 +105,98 @@ export default function Index() {
   const handleExercise1Answer = (scenarioId: number, answer: string, correctAnswer: string) => {
     setExercise1Answers(prev => ({ ...prev, [scenarioId]: answer }));
     setExercise1Feedback(prev => ({ ...prev, [scenarioId]: answer === correctAnswer }));
+  };
+
+  // Exercise 2 data and handlers
+  const exercise2Situations = [
+    { id: "audit", text: "Pression liée à un audit de conformité", correctCategory: "professionnel" },
+    { id: "divorce", text: "Divorce en cours", correctCategory: "personnel" },
+    { id: "bruit", text: "Bruit permanent sur le chantier voisin", correctCategory: "environnemental" },
+    { id: "conflit", text: "Conflit avec un collègue", correctCategory: "professionnel" },
+    { id: "finances", text: "Difficultés financières", correctCategory: "personnel" }
+  ];
+
+  const handleExercise2Placement = (situationId: string, category: string) => {
+    setExercise2Placements(prev => ({ ...prev, [situationId]: category }));
+  };
+
+  const checkExercise2Results = () => {
+    setExercise2ShowResults(true);
+  };
+
+  const getExercise2Score = () => {
+    return exercise2Situations.filter(situation =>
+      exercise2Placements[situation.id] === situation.correctCategory
+    ).length;
+  };
+
+  // Exercise 3 data and handlers
+  const exercise3Symptoms = [
+    { id: "insomnie", text: "Insomnie", correctCategory: "physique" },
+    { id: "irritabilite", text: "Irritabilité", correctCategory: "emotionnel" },
+    { id: "memoire", text: "Trous de mémoire", correctCategory: "cognitif" },
+    { id: "isolement", text: "Isolement", correctCategory: "comportemental" },
+    { id: "tensions", text: "Tensions musculaires", correctCategory: "physique" },
+    { id: "motivation", text: "Perte de motivation", correctCategory: "emotionnel" },
+    { id: "erreurs", text: "Erreurs répétées", correctCategory: "cognitif" },
+    { id: "alcool", text: "Consommation accrue d'alcool", correctCategory: "comportemental" }
+  ];
+
+  const handleExercise3Placement = (symptomId: string, category: string) => {
+    setExercise3Placements(prev => ({ ...prev, [symptomId]: category }));
+  };
+
+  const checkExercise3Results = () => {
+    setExercise3ShowResults(true);
+  };
+
+  const getExercise3Score = () => {
+    return exercise3Symptoms.filter(symptom =>
+      exercise3Placements[symptom.id] === symptom.correctCategory
+    ).length;
+  };
+
+  // Exercise 4 data and handlers
+  const exercise4Questions = [
+    {
+      id: 1,
+      question: "De quel type de stress s'agit-il ?",
+      options: ["Aigu", "Chronique", "Post-traumatique"],
+      correctAnswer: "Post-traumatique",
+      explanation: "Correct ! Les symptômes persistent depuis plusieurs semaines après un événement traumatique passé."
+    },
+    {
+      id: 2,
+      question: "Quels signaux repérez-vous dans ce témoignage ?",
+      options: ["Physiques (sommeil)", "Émotionnels (tension)", "Cognitifs (reviviscences)", "Combinaison des trois"],
+      correctAnswer: "Combinaison des trois",
+      explanation: "Exact ! Le témoignage révèle des symptômes physiques (insomnie), émotionnels (tension) et cognitifs (images qui reviennent)."
+    },
+    {
+      id: 3,
+      question: "Quelle serait la meilleure attitude ?",
+      options: [
+        "Lui conseiller de 'tenir le coup'",
+        "L'orienter vers une ressource interne/externe",
+        "Ignorer la situation pour éviter de 'raviver le trauma'"
+      ],
+      correctAnswer: "L'orienter vers une ressource interne/externe",
+      explanation: "Parfait ! L'orientation vers un professionnel est la réponse appropriée face à des symptômes de SPT."
+    }
+  ];
+
+  const handleExercise4Answer = (questionId: number, answer: string) => {
+    setExercise4Answers(prev => ({ ...prev, [questionId]: answer }));
+  };
+
+  const checkExercise4Results = () => {
+    setExercise4ShowResults(true);
+  };
+
+  const getExercise4Score = () => {
+    return exercise4Questions.filter(question =>
+      exercise4Answers[question.id] === question.correctAnswer
+    ).length;
   };
   
   const questions = [
