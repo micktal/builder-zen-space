@@ -201,22 +201,40 @@ export default function Index() {
   
   const questions = [
     {
-      question: "Le SPT est reconnu depuis la Première Guerre mondiale.",
-      type: "boolean" as const,
-      answer: false,
-      explanation: "Faux - Le SPT est officiellement reconnu depuis 1980 dans le DSM-III."
-    },
-    {
-      question: "Les cauchemars récurrents sont un symptôme du SPT.",
+      question: "Le SPT a été officiellement reconnu pour la première fois en 1980 dans le DSM-III.",
       type: "boolean" as const,
       answer: true,
-      explanation: "Vrai - Les cauchemars récurrents font partie des reviviscences, symptôme clé du SPT."
+      explanation: "Vrai - Avant 1980, on parlait de 'shell shock' ou 'névrose de guerre', mais la reconnaissance officielle date de 1980."
     },
     {
-      question: "L'hypervigilance est une réaction normale uniquement à court terme.",
+      question: "Quel était le terme utilisé pendant la Première Guerre mondiale pour décrire les symptômes similaires au SPT ?",
+      type: "multiple" as const,
+      options: [
+        "Shell shock",
+        "Névrose traumatique",
+        "Syndrome de stress",
+        "Fatigue psychologique"
+      ],
+      answer: 0,
+      explanation: "Correct - Le terme 'Shell shock' (choc de l'obus) était utilisé pendant la Première Guerre mondiale."
+    },
+    {
+      question: "Un employé subit une surcharge de travail depuis 6 mois. Il s'agit de stress :",
+      type: "multiple" as const,
+      options: [
+        "Aigu",
+        "Chronique",
+        "Post-traumatique",
+        "Situationnel"
+      ],
+      answer: 1,
+      explanation: "Correct - Un stress prolongé sur 6 mois constitue un stress chronique."
+    },
+    {
+      question: "Dans le cerveau en 'mode survie', l'amygdale est hyperactive.",
       type: "boolean" as const,
-      answer: false,
-      explanation: "Faux - L'hypervigilance persistante est un symptôme du SPT quand elle dure plus d'un mois."
+      answer: true,
+      explanation: "Vrai - L'amygdale reste en état d'alerte constant, déclenchant des réactions de peur même sans danger réel."
     },
     {
       question: "Quels sont les 4 grands types de symptômes du SPT ?",
@@ -231,10 +249,52 @@ export default function Index() {
       explanation: "Correct - Les 4 grands types sont : Reviviscences, Évitement, Hypervigilance, et Altérations émotionnelles et cognitives."
     },
     {
-      question: "Le SPT apparaît toujours immédiatement après l'événement.",
+      question: "Un 'réseau social solide' est un facteur de :",
+      type: "multiple" as const,
+      options: [
+        "Risque pour développer un SPT",
+        "Protection contre le SPT",
+        "Déclenchement du SPT",
+        "Aucun impact sur le SPT"
+      ],
+      answer: 1,
+      explanation: "Correct - Un réseau social solide (famille, amis, collègues) est un facteur de protection contre le développement du SPT."
+    },
+    {
+      question: "Les flashbacks sont des symptômes de quelle catégorie ?",
+      type: "multiple" as const,
+      options: [
+        "Évitement",
+        "Hypervigilance",
+        "Reviviscences",
+        "Altérations émotionnelles"
+      ],
+      answer: 2,
+      explanation: "Correct - Les flashbacks font partie des reviviscences, où la personne revit l'événement traumatique."
+    },
+    {
+      question: "Le développement d'un SPT est toujours lié à une faiblesse personnelle.",
       type: "boolean" as const,
       answer: false,
-      explanation: "Faux - Le SPT peut parfois apparaître avec un délai après l'événement traumatique."
+      explanation: "Faux - Le SPT dépend d'un ensemble de conditions et de l'équilibre entre facteurs de risque et de protection, jamais d'une faiblesse personnelle."
+    },
+    {
+      question: "Un conflit avec un collègue relève de quel genre de stress ?",
+      type: "multiple" as const,
+      options: [
+        "Personnel",
+        "Professionnel",
+        "Environnemental",
+        "Psychologique"
+      ],
+      answer: 1,
+      explanation: "Correct - Un conflit avec un collègue relève du stress professionnel, lié au contexte de travail."
+    },
+    {
+      question: "L'évitement systématique des lieux liés au trauma est une réaction normale à long terme.",
+      type: "boolean" as const,
+      answer: false,
+      explanation: "Faux - L'évitement systématique persistant est un symptôme du SPT, pas une réaction normale à long terme."
     }
   ];
 
@@ -449,7 +509,7 @@ export default function Index() {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-wellness-50 p-4 rounded-lg border border-wellness-200">
                   <h4 className="font-semibold text-wellness-800 mb-2">Panique</h4>
-                  <p className="text-sm text-gray-600">Réaction immédiate, crise brève</p>
+                  <p className="text-sm text-gray-600">Réaction imm��diate, crise brève</p>
                 </div>
                 <div className="bg-therapeutic-50 p-4 rounded-lg border border-therapeutic-200">
                   <h4 className="font-semibold text-therapeutic-800 mb-2">Anxiété / Peur</h4>
@@ -1392,7 +1452,7 @@ export default function Index() {
                     </p>
                     <div className="space-y-2 text-sm text-gray-700">
                       <p>• <strong>Identification du stress :</strong> {exercise4Answers[1] === exercise4Questions[0].correctAnswer ? '✅' : '❌'}</p>
-                      <p>• <strong>Reconnaissance des signaux :</strong> {exercise4Answers[2] === exercise4Questions[1].correctAnswer ? '✅' : '❌'}</p>
+                      <p>• <strong>Reconnaissance des signaux :</strong> {exercise4Answers[2] === exercise4Questions[1].correctAnswer ? '��' : '❌'}</p>
                       <p>• <strong>Attitude managériale :</strong> {exercise4Answers[3] === exercise4Questions[2].correctAnswer ? '✅' : '❌'}</p>
                     </div>
 
