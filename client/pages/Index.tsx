@@ -434,20 +434,40 @@ export default function Index() {
                 
                 <div className="space-y-4">
                   <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                    <h5 className="font-semibold text-medical-800 mb-2">1. Reviviscences</h5>
-                    <p className="text-sm text-gray-600">Flashbacks, cauchemars récurrents</p>
+                    <h5 className="font-semibold text-medical-800 mb-3">1. Reviviscences</h5>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p className="font-medium text-medical-700">Quand : Déclenchées soudainement par des stimuli rappelant le trauma</p>
+                      <p><strong>Raison :</strong> L'hippocampe n'arrive pas à intégrer le souvenir traumatique comme un ��vénement passé</p>
+                      <p><strong>Manifestations :</strong> Flashbacks vivaces, cauchemars récurrents, impression que l'événement se reproduit ici et maintenant</p>
+                      <p className="text-xs text-gray-600">Ex : Une sirène déclenche le revécu complet d'un accident</p>
+                    </div>
                   </div>
                   <div className="bg-therapeutic-50 p-4 rounded-lg border border-therapeutic-200">
-                    <h5 className="font-semibold text-therapeutic-800 mb-2">2. Évitement</h5>
-                    <p className="text-sm text-gray-600">Personnes, lieux, pensées liés au trauma</p>
+                    <h5 className="font-semibold text-therapeutic-800 mb-3">2. Évitement</h5>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p className="font-medium text-therapeutic-700">Quand : Dès qu'une situation rappelle de près ou de loin le trauma</p>
+                      <p><strong>Raison :</strong> Mécanisme de protection pour éviter la réactivation de la détresse</p>
+                      <p><strong>Manifestations :</strong> Évitement des lieux, personnes, activités, conversations liées au trauma</p>
+                      <p className="text-xs text-gray-600">Ex : Refuser de conduire après un accident de voiture</p>
+                    </div>
                   </div>
                   <div className="bg-wellness-50 p-4 rounded-lg border border-wellness-200">
-                    <h5 className="font-semibold text-wellness-800 mb-2">3. Hypervigilance</h5>
-                    <p className="text-sm text-gray-600">Sursauts, anxiété constante, sommeil perturbé</p>
+                    <h5 className="font-semibold text-wellness-800 mb-3">3. Hypervigilance</h5>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p className="font-medium text-wellness-700">Quand : État permanent d'alerte, 24h/24</p>
+                      <p><strong>Raison :</strong> L'amygdale reste activée en continu, cherchant constamment le danger</p>
+                      <p><strong>Manifestations :</strong> Sursauts exagérés, scanning constant de l'environnement, insomnie, irritabilité</p>
+                      <p className="text-xs text-gray-600">Ex : Se retourner sans cesse dans la rue, analyser chaque bruit</p>
+                    </div>
                   </div>
                   <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                    <h5 className="font-semibold text-medical-800 mb-2">4. Altérations émotionnelles</h5>
-                    <p className="text-sm text-gray-600">Culpabilité, isolement, colère</p>
+                    <h5 className="font-semibold text-medical-800 mb-3">4. Altérations émotionnelles</h5>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p className="font-medium text-medical-700">Quand : Changements persistants dans l'humeur et les pensées</p>
+                      <p><strong>Raison :</strong> Dysfonctionnement du cortex préfrontal, incapacité à réguler les émotions</p>
+                      <p><strong>Manifestations :</strong> Culpabilité excessive, détachement social, colères explosives, anhédonie</p>
+                      <p className="text-xs text-gray-600">Ex : "C'est de ma faute", perte d'intérêt pour les activités plaisantes</p>
+                    </div>
                   </div>
                 </div>
               </div>
