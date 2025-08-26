@@ -211,28 +211,70 @@ export default function Index() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="text-lg">Avant 1945</AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-gray-700">
-                      "Shell shock", fatigue de combat. Les symptômes étaient reconnus mais mal compris, 
-                      souvent attribués à la faiblesse ou au manque de courage.
-                    </p>
+                    <div className="space-y-3 text-gray-700">
+                      <p>
+                        Durant la Première Guerre mondiale, les soldats présentant des symptômes de stress post-traumatique
+                        étaient diagnostiqués avec le "Shell shock" (choc de l'obus) ou la "fatigue de combat".
+                        Ces termes reflétaient une compréhension limitée du phénomène.
+                      </p>
+                      <p>
+                        Les symptômes étaient souvent attribués à la lâcheté, au manque de courage moral, ou à une
+                        faiblesse de caractère. Certains soldats étaient même fusillés pour "désertion" alors qu'ils
+                        souffraient en réalité de troubles psychologiques sévères.
+                      </p>
+                      <p>
+                        Les médecins militaires commençaient néanmoins à observer des patterns récurrents :
+                        tremblements, cauchemars, mutisme, paralysies sans cause physique apparente.
+                      </p>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="text-lg">1945-1980</AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-gray-700">
-                      Période de "névrose traumatique" avec une reconnaissance progressive des effets 
-                      psychologiques durables des traumatismes, notamment chez les vétérans du Vietnam.
-                    </p>
+                    <div className="space-y-3 text-gray-700">
+                      <p>
+                        Après la Seconde Guerre mondiale, le terme "névrose traumatique" remplace progressivement
+                        le "shell shock". Les psychiatres commencent à comprendre que les traumatismes peuvent avoir
+                        des effets psychologiques durables, indépendamment du courage ou de la moralité.
+                      </p>
+                      <p>
+                        La guerre du Vietnam marque un tournant décisif. Des milliers de vétérans reviennent avec
+                        des symptômes persistants : flashbacks, hypervigilance, évitement, colère incontrôlable.
+                        Le terme "syndrome du Vietnam" émerge dans les années 1970.
+                      </p>
+                      <p>
+                        Les associations d'anciens combattants se mobilisent pour faire reconnaître ces troubles.
+                        Des études scientifiques commencent à documenter la prévalence et la persistance des symptômes,
+                        préparant le terrain pour une reconnaissance officielle.
+                      </p>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger className="text-lg">Depuis 1980</AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-gray-700">
-                      Trouble officiellement reconnu : SPT. Critères diagnostiques précis, recherche 
-                      scientifique avancée et développement de traitements spécialisés.
-                    </p>
+                    <div className="space-y-3 text-gray-700">
+                      <p>
+                        <strong>1980 :</strong> Le trouble de stress post-traumatique entre officiellement dans le DSM-III
+                        (Manuel diagnostique et statistique des troubles mentaux). Pour la première fois, des critères
+                        diagnostiques précis sont établis, définissant clairement les symptômes et leur durée.
+                      </p>
+                      <p>
+                        <strong>Évolutions successives :</strong> Le DSM-IV (1994) puis le DSM-5 (2013) affinent les critères.
+                        La classification internationale des maladies (CIM-11) de l'OMS intègre également le diagnostic.
+                        Le SPT sort définitivement du domaine militaire pour être reconnu dans tous les contextes.
+                      </p>
+                      <p>
+                        <strong>Avancées scientifiques :</strong> L'imagerie cérébrale révèle les mécanismes neurobiologiques.
+                        Des traitements efficaces se développent : thérapies cognitivo-comportementales, EMDR,
+                        thérapies d'exposition. La recherche explore aussi les facteurs de vulnérabilité et de résilience.
+                      </p>
+                      <p>
+                        Aujourd'hui, le SPT est reconnu comme pouvant affecter toute personne exposée à un traumatisme :
+                        accidents, agressions, catastrophes naturelles, violences domestiques, etc.
+                      </p>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
