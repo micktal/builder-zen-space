@@ -5,13 +5,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
-import { 
-  Brain, 
-  Heart, 
-  AlertCircle, 
-  Download, 
-  Phone, 
-  FileText, 
+import {
+  Brain,
+  Heart,
+  AlertCircle,
+  Download,
+  Phone,
+  FileText,
   Play,
   CheckCircle2,
   XCircle,
@@ -22,6 +22,8 @@ import {
   Users,
   Target
 } from "lucide-react";
+import SPTInfographic from "@/components/SPTInfographic";
+import { downloadInfographic } from "@/utils/downloadUtils";
 
 interface DragItem {
   id: string;
