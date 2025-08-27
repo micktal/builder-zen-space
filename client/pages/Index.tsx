@@ -933,7 +933,618 @@ export default function Index() {
           </Card>
         </section>
 
-        {/* Bloc 7 - Simulations interactives */}
+        {/* Bloc 7 - Prévention et préparation */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
+            <h2 className="text-3xl font-bold text-medical-800">
+              Prévention et préparation : agir avant le traumatisme
+            </h2>
+          </div>
+
+          <div className="space-y-8">
+
+            {/* Cartographie des risques par secteur */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-medical-800 flex items-center gap-2">
+                  <Target className="w-6 h-6" />
+                  Cartographie des risques par secteur d'activité
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg text-gray-700 mb-6">
+                  Chaque secteur d'activité présente des risques spécifiques. Identifier ces risques permet
+                  de mettre en place des mesures préventives adaptées.
+                </p>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                    <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                      <Shield className="w-5 h-5" />
+                      Sécurité & Urgences
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques élevés :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Agressions physiques</li>
+                        <li>• Accidents graves</li>
+                        <li>• Situations de vie/mort</li>
+                        <li>• Violence répétée</li>
+                      </ul>
+                      <p className="text-red-600 font-medium mt-3">Niveau : CRITIQUE</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
+                    <h4 className="font-semibold text-orange-800 mb-3 flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      Social & Santé
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques modérés :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Détresse humaine</li>
+                        <li>• Décès de patients</li>
+                        <li>• Situations d'échec</li>
+                        <li>• Surcharge émotionnelle</li>
+                      </ul>
+                      <p className="text-orange-600 font-medium mt-3">Niveau : ÉLEVÉ</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-yellow-800 mb-3 flex items-center gap-2">
+                      <Brain className="w-5 h-5" />
+                      Tertiaire & Bureau
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques faibles :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Harcèlement moral</li>
+                        <li>• Conflits interpersonnels</li>
+                        <li>• Stress chronique</li>
+                        <li>• Isolement professionnel</li>
+                      </ul>
+                      <p className="text-yellow-600 font-medium mt-3">Niveau : MODÉRÉ</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      Transport & Logistique
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques spécifiques :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Accidents de la route</li>
+                        <li>• Témoins d'accidents</li>
+                        <li>• Agressions en déplacement</li>
+                        <li>• Isolement géographique</li>
+                      </ul>
+                      <p className="text-purple-600 font-medium mt-3">Niveau : ÉLEVÉ</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                      <Heart className="w-5 h-5" />
+                      Éducation & Formation
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques émergents :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Violence scolaire</li>
+                        <li>• Détresse des apprenants</li>
+                        <li>• Burnout pédagogique</li>
+                        <li>• Conflits familiaux</li>
+                      </ul>
+                      <p className="text-blue-600 font-medium mt-3">Niveau : MODÉRÉ</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                      <FileText className="w-5 h-5" />
+                      Industrie & Technique
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <p><strong>Risques techniques :</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Accidents industriels</li>
+                        <li>• Explosions/incendies</li>
+                        <li>• Blessures graves</li>
+                        <li>• Responsabilité collective</li>
+                      </ul>
+                      <p className="text-green-600 font-medium mt-3">Niveau : ÉLEVÉ</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                  <h4 className="font-semibold text-medical-800 mb-3">À retenir</h4>
+                  <p className="text-gray-700 text-sm">
+                    Aucun secteur n'est totalement exempt de risques. L'identification précoce permet
+                    de mettre en place des formations, des protocoles et des ressources adaptées
+                    avant qu'un incident ne survienne.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Plan de prévention personnalisé */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-medical-800 flex items-center gap-2">
+                  <Users className="w-6 h-6" />
+                  Plan de prévention personnalisé selon le profil
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg text-gray-700 mb-6">
+                  Chaque personne a des vulnérabilités et des ressources différentes.
+                  Un plan personnalisé maximise l'efficacité de la prévention.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-4">🔍 Évaluation initiale</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <h5 className="font-medium text-blue-700">Facteurs de vulnérabilité</h5>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                          <li>✓ Antécédents traumatiques personnels</li>
+                          <li>✓ Isolement social ou familial</li>
+                          <li>✓ Problèmes de santé mentale existants</li>
+                          <li>✓ Exposition professionnelle répétée</li>
+                          <li>✓ Stratégies d'adaptation limitées</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-3">
+                        <h5 className="font-medium text-blue-700">Ressources disponibles</h5>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                          <li>✓ Réseau de soutien familial/social</li>
+                          <li>✓ Accès aux soins de santé mentale</li>
+                          <li>✓ Formation en gestion du stress</li>
+                          <li>✓ Activités physiques/relaxation</li>
+                          <li>✓ Environnement de travail favorable</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-800 mb-4">📋 Plans types selon profil</h4>
+
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger className="text-left">
+                          <span className="font-medium">Profil à RISQUE ÉLEVÉ</span>
+                          <Badge variant="destructive" className="ml-2">Prioritaire</Badge>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-3 text-sm text-gray-700">
+                            <p><strong>Formation renforcée :</strong> Sessions trimestrielles sur la gestion du stress et reconnaissance des symptômes</p>
+                            <p><strong>Suivi régulier :</strong> Entretiens mensuels avec RH ou psychologue du travail</p>
+                            <p><strong>Réseau prioritaire :</strong> Accès direct à une ligne d'écoute 24h/24</p>
+                            <p><strong>Adaptations :</strong> Rotation des postes à risque, temps de repos renforcés</p>
+                            <p><strong>Plan de crise :</strong> Protocole d'intervention immédiate en cas d'incident</p>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+
+                      <AccordionItem value="item-2">
+                        <AccordionTrigger className="text-left">
+                          <span className="font-medium">Profil à RISQUE MODÉRÉ</span>
+                          <Badge variant="default" className="ml-2">Standard</Badge>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-3 text-sm text-gray-700">
+                            <p><strong>Formation standard :</strong> Sessions semestrielles de sensibilisation</p>
+                            <p><strong>Suivi préventif :</strong> Entretiens annuels ou sur demande</p>
+                            <p><strong>Ressources accessibles :</strong> Documentation, contacts utiles affichés</p>
+                            <p><strong>Activités bien-être :</strong> Programmes de relaxation, sport en entreprise</p>
+                            <p><strong>Veille active :</strong> Surveillance des signaux faibles par l'encadrement</p>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+
+                      <AccordionItem value="item-3">
+                        <AccordionTrigger className="text-left">
+                          <span className="font-medium">Profil à FAIBLE RISQUE</span>
+                          <Badge variant="secondary" className="ml-2">Maintien</Badge>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-3 text-sm text-gray-700">
+                            <p><strong>Sensibilisation :</strong> Information générale lors de l'intégration</p>
+                            <p><strong>Ressources disponibles :</strong> Accès aux mêmes ressources en cas de besoin</p>
+                            <p><strong>Rôle de soutien :</strong> Formation pour soutenir les collègues en difficulté</p>
+                            <p><strong>Prévention générale :</strong> Maintien d'un environnement de travail sain</p>
+                            <p><strong>Évolution du profil :</strong> Réévaluation en cas de changement de poste</p>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Techniques de résilience */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-medical-800 flex items-center gap-2">
+                  <Heart className="w-6 h-6" />
+                  Techniques de résilience : exercices pratiques quotidiens
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg text-gray-700 mb-6">
+                  La résilience se développe par la pratique régulière. Voici des exercices simples
+                  à intégrer dans votre quotidien professionnel et personnel.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-4 flex items-center gap-2">
+                      <Brain className="w-5 h-5" />
+                      Techniques cognitives
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-blue-700 mb-2">Technique 3-3-3</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> En situation de stress aigu
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> Nommez 3 choses que vous voyez, 3 sons que vous entendez,
+                          bougez 3 parties de votre corps. Répétez jusqu'à vous sentir ancré dans le présent.
+                        </p>
+                      </div>
+
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-blue-700 mb-2">Restructuration cognitive</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Pensées négatives récurrentes
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> "Est-ce que cette pensée est utile ? Réaliste ?
+                          Que dirais-je à un ami dans cette situation ?"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-800 mb-4 flex items-center gap-2">
+                      <Heart className="w-5 h-5" />
+                      Techniques corporelles
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-green-700 mb-2">Respiration 4-7-8</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Avant/après situation stressante
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> Inspirez 4 sec, retenez 7 sec, expirez 8 sec.
+                          Répétez 4 cycles.
+                        </p>
+                      </div>
+
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-green-700 mb-2">Relaxation progressive</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Fin de journée, tensions musculaires
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> Contractez puis relâchez chaque groupe musculaire,
+                          des pieds à la tête.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-800 mb-4 flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      Techniques sociales
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-purple-700 mb-2">Check-in quotidien</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Début/fin d'équipe
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> "Comment tu te sens aujourd'hui sur une échelle de 1 à 10 ?"
+                          Écoute active, sans jugement.
+                        </p>
+                      </div>
+
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-purple-700 mb-2">Réseau de soutien</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Prévention continue
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> Identifiez 3 personnes de confiance (travail/personnel)
+                          avec qui parler en cas de besoin.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-yellow-800 mb-4 flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      Techniques organisationnelles
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-yellow-700 mb-2">Routine de décompression</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Transition travail/personnel
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> 10 min de rituel (musique, marche, lecture)
+                          pour "fermer" la journée de travail.
+                        </p>
+                      </div>
+
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-yellow-700 mb-2">Planning protecteur</h5>
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Quand :</strong> Organisation hebdomadaire
+                        </p>
+                        <p className="text-sm text-gray-700">
+                          <strong>Comment :</strong> Bloquez du temps pour activités ressourçantes
+                          (sport, loisirs, social) comme des RDV incontournables.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                  <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                    <Target className="w-5 h-5" />
+                    Mise en pratique
+                  </h4>
+                  <p className="text-gray-700 mb-4">
+                    <strong>Défi :</strong> Choisissez 1 technique par catégorie et pratiquez-la pendant 1 semaine.
+                    Notez vos ressentis et adaptez selon vos besoins.
+                  </p>
+                  <div className="grid md:grid-cols-4 gap-3 text-xs">
+                    <div className="bg-blue-100 p-2 rounded text-center">
+                      <p className="font-medium">Lundi-Mardi</p>
+                      <p>Technique cognitive</p>
+                    </div>
+                    <div className="bg-green-100 p-2 rounded text-center">
+                      <p className="font-medium">Mercredi-Jeudi</p>
+                      <p>Technique corporelle</p>
+                    </div>
+                    <div className="bg-purple-100 p-2 rounded text-center">
+                      <p className="font-medium">Vendredi</p>
+                      <p>Technique sociale</p>
+                    </div>
+                    <div className="bg-yellow-100 p-2 rounded text-center">
+                      <p className="font-medium">Week-end</p>
+                      <p>Technique organisationnelle</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Débriefing post-incident */}
+            <Card className="p-8 border-medical-200 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-medical-800 flex items-center gap-2">
+                  <FileText className="w-6 h-6" />
+                  Débriefing post-incident : protocoles step-by-step
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg text-gray-700 mb-6">
+                  Après un événement potentiellement traumatisant, un débriefing structuré peut prévenir
+                  le développement d'un SPT et favoriser la récupération.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
+                    <h4 className="font-semibold text-red-800 mb-4 flex items-center gap-2">
+                      <AlertCircle className="w-5 h-5" />
+                      Phase 1 : Sécurisation immédiate (0-2h)
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-white p-4 rounded border">
+                          <h5 className="font-medium text-red-700 mb-2">✓ Assurer la sécurité physique</h5>
+                          <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Évacuer si nécessaire</li>
+                            <li>• Appeler les secours</li>
+                            <li>• Isoler la zone de danger</li>
+                            <li>• Faire le point sur les blessés</li>
+                          </ul>
+                        </div>
+                        <div className="bg-white p-4 rounded border">
+                          <h5 className="font-medium text-red-700 mb-2">✓ Premier soutien psychologique</h5>
+                          <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Rassurer : "Vous êtes en sécurité maintenant"</li>
+                            <li>• Éviter l'isolement</li>
+                            <li>• Respecter le silence si besoin</li>
+                            <li>• Proposer de l'eau, une couverture</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="bg-red-100 p-4 rounded border border-red-300">
+                        <p className="text-sm text-red-800">
+                          <strong>⚠️ À éviter absolument :</strong> Forcer à parler, minimiser l'événement,
+                          donner des conseils, dire "je comprends ce que vous ressentez".
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-yellow-800 mb-4 flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      Phase 2 : Débriefing précoce (24-72h)
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded border">
+                        <h5 className="font-medium text-yellow-700 mb-3">📋 Protocole en 6 étapes</h5>
+                        <div className="space-y-3">
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
+                            <div>
+                              <p className="font-medium text-sm">Introduction et cadrage</p>
+                              <p className="text-xs text-gray-600">Expliquer l'objectif, la confidentialité, le déroulement</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</span>
+                            <div>
+                              <p className="font-medium text-sm">Reconstruction factuelle</p>
+                              <p className="text-xs text-gray-600">"Que s'est-il passé exactement ?" Sans jugement ni interprétation</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</span>
+                            <div>
+                              <p className="font-medium text-sm">Expression des pensées</p>
+                              <p className="text-xs text-gray-600">"Qu'avez-vous pensé sur le moment ?" Laisser venir spontanément</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">4</span>
+                            <div>
+                              <p className="font-medium text-sm">Expression des émotions</p>
+                              <p className="text-xs text-gray-600">"Comment vous sentez-vous ?" Normaliser toutes les émotions</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">5</span>
+                            <div>
+                              <p className="font-medium text-sm">Psychoéducation</p>
+                              <p className="text-xs text-gray-600">Expliquer les réactions normales au stress, signaux d'alerte</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">6</span>
+                            <div>
+                              <p className="font-medium text-sm">Plan de suivi</p>
+                              <p className="text-xs text-gray-600">Ressources, prochains contacts, signaux d'alerte à surveiller</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-yellow-100 p-4 rounded border border-yellow-300">
+                        <p className="text-sm text-yellow-800">
+                          <strong>💡 Durée recommandée :</strong> 45-90 minutes maximum.
+                          Si la personne est trop choquée, reporter à plus tard.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-800 mb-4 flex items-center gap-2">
+                      <Shield className="w-5 h-5" />
+                      Phase 3 : Suivi et prévention (1 semaine - 1 mois)
+                    </h4>
+
+                    <div className="space-y-4">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-white p-4 rounded border">
+                          <h5 className="font-medium text-green-700 mb-2">📞 Points de contact réguliers</h5>
+                          <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• J+3 : Appel ou visite courte</li>
+                            <li>• J+7 : Entretien de suivi</li>
+                            <li>• J+15 : Évaluation de l'évolution</li>
+                            <li>• J+30 : Bilan et orientation si besoin</li>
+                          </ul>
+                        </div>
+                        <div className="bg-white p-4 rounded border">
+                          <h5 className="font-medium text-green-700 mb-2">🚨 Signaux d'alerte à surveiller</h5>
+                          <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Insomnie persistante (&gt;1 semaine)</li>
+                            <li>• Évitement du lieu/contexte</li>
+                            <li>• Flashbacks ou cauchemars</li>
+                            <li>• Isolement social croissant</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="bg-green-100 p-4 rounded border border-green-300">
+                        <h5 className="font-medium text-green-700 mb-2">✅ Critères de bonne récupération</h5>
+                        <div className="grid md:grid-cols-3 gap-3 text-sm text-gray-700">
+                          <div>• Retour du sommeil normal</div>
+                          <div>• Reprise des activités habituelles</div>
+                          <div>• Émotions stabilisées</div>
+                          <div>• Capacité à parler de l'événement</div>
+                          <div>• Maintien des liens sociaux</div>
+                          <div>• Confiance en l'avenir retrouvée</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-medical-50 p-6 rounded-lg border border-medical-200">
+                    <h4 className="font-semibold text-medical-800 mb-3 flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      Qui peut mener un débriefing ?
+                    </h4>
+                    <div className="grid md:grid-cols-3 gap-4 text-sm">
+                      <div className="bg-white p-3 rounded border">
+                        <p className="font-medium text-medical-700 mb-2">Formation minimale requise</p>
+                        <ul className="text-gray-700 space-y-1">
+                          <li>• Manager formé aux premiers secours psychologiques</li>
+                          <li>• RH avec spécialisation en accompagnement</li>
+                          <li>• Référent santé au travail</li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-3 rounded border">
+                        <p className="font-medium text-medical-700 mb-2">Expertise recommandée</p>
+                        <ul className="text-gray-700 space-y-1">
+                          <li>• Psychologue du travail</li>
+                          <li>• Médecin du travail</li>
+                          <li>• Professionnel formé au débriefing</li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-3 rounded border">
+                        <p className="font-medium text-medical-700 mb-2">Cas complexes</p>
+                        <ul className="text-gray-700 space-y-1">
+                          <li>• Psychologue clinicien</li>
+                          <li>• Psychiatre spécialisé</li>
+                          <li>• Équipe mobile de crise</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+          </div>
+        </section>
+
+        {/* Bloc 8 - Simulations interactives */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
