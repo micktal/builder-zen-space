@@ -522,7 +522,7 @@ export default function Index() {
                 </div>
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
                   <h4 className="font-semibold text-medical-800 mb-2">SPT</h4>
-                  <p className="text-sm text-gray-600">Sympt��mes persistants au-delà d'1 mois</p>
+                  <p className="text-sm text-gray-600">Symptômes persistants au-delà d'1 mois</p>
                 </div>
               </div>
 
@@ -743,7 +743,7 @@ export default function Index() {
                   <div className="bg-green-50 p-5 rounded-lg border border-green-200">
                     <h5 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
                       <Shield className="w-5 h-5" />
-                      Votre �� bouclier émotionnel » est affaibli
+                      Votre « bouclier émotionnel » est affaibli
                     </h5>
                     <ul className="text-sm text-gray-700 space-y-2">
                       <li>• Difficulté à contrôler vos émotions</li>
@@ -1536,7 +1536,7 @@ export default function Index() {
                         <p className="font-medium text-medical-700 mb-2">Cas complexes</p>
                         <ul className="text-gray-700 space-y-1">
                           <li>• Psychologue clinicien</li>
-                          <li>• Psychiatre spécialis��</li>
+                          <li>• Psychiatre spécialisé</li>
                           <li>• Équipe mobile de crise</li>
                         </ul>
                       </div>
