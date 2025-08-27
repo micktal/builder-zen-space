@@ -1621,28 +1621,6 @@ export default function Index() {
                 </Button>
               </div>
               
-              <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
-                <div className="text-center space-y-4">
-                  <h4 className="font-semibold text-medical-800 flex items-center justify-center gap-2">
-                    <Shield className="w-5 h-5" />
-                    Numéros d'urgence psychologique
-                  </h4>
-                  <div className="grid md:grid-cols-3 gap-4 text-sm">
-                    <div className="bg-white p-3 rounded border">
-                      <p className="font-medium">SOS Amitié</p>
-                      <p className="text-medical-600">09 72 39 40 50</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border">
-                      <p className="font-medium">Suicide Écoute</p>
-                      <p className="text-medical-600">01 45 39 40 00</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border">
-                      <p className="font-medium">Urgences</p>
-                      <p className="text-medical-600">15 ou 112</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </section>
