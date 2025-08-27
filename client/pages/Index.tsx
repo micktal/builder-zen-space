@@ -1648,7 +1648,7 @@ export default function Index() {
                                   <p className={`font-medium mb-2 ${
                                     isCorrect ? 'text-green-800' : 'text-red-800'
                                   }`}>
-                                    {isCorrect ? 'Bonne r��ponse !' : 'Réponse incorrecte'}
+                                    {isCorrect ? 'Bonne réponse !' : 'Réponse incorrecte'}
                                   </p>
                                   <p className="text-sm text-gray-700">
                                     {isCorrect
@@ -2270,6 +2270,11 @@ export default function Index() {
             </CardContent>
           </Card>
         </section>
+      </div>
+
+      {/* Hidden infographic for download */}
+      <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        <SPTInfographic />
       </div>
       
       {/* Footer */}
