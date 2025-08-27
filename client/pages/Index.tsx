@@ -37,7 +37,7 @@ export default function Index() {
     { id: '3', text: 'Sursaut après un bruit', category: 'normal' },
     { id: '4', text: 'Reviviscences en boucle', category: 'spt' },
     { id: '5', text: 'Tristesse passagère', category: 'normal' },
-    { id: '6', text: 'Évitement systématique', category: 'spt' }
+    { id: '6', text: 'Évitement syst��matique', category: 'spt' }
   ]);
   
   const [droppedItems, setDroppedItems] = useState<{ normal: DragItem[], spt: DragItem[] }>({
@@ -1284,11 +1284,11 @@ export default function Index() {
                       {/* Résultats par catégorie */}
                       <div className="grid md:grid-cols-4 gap-4 mb-4">
                         {['physique', 'emotionnel', 'cognitif', 'comportemental'].map((category) => {
-                          const categorySymbols = {
-                            physique: '🫀',
-                            emotionnel: '😔',
-                            cognitif: '🧠',
-                            comportemental: '🎭'
+                          const categoryIcons = {
+                            physique: Heart,
+                            emotionnel: AlertCircle,
+                            cognitif: Brain,
+                            comportemental: Users
                           };
 
                           const categoryColors = {
