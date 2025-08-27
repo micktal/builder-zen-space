@@ -728,7 +728,7 @@ export default function Index() {
                       Votre « machine à temps » est cassée
                     </h5>
                     <ul className="text-sm text-gray-700 space-y-2">
-                      <li>• Le passé traumatique revient comme s'il était présent</li>
+                      <li>• Le pass�� traumatique revient comme s'il était présent</li>
                       <li>• Votre cerveau confond « c'était » et « c'est maintenant »</li>
                       <li>• Les flashbacks vous font revivre l'événement</li>
                       <li>• Vous ne pouvez pas « ranger » le souvenir au passé</li>
@@ -2109,7 +2109,7 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Bloc 8 - Quiz final */}
+        {/* Bloc 9 - Quiz final */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
