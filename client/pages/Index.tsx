@@ -1090,7 +1090,10 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-700 font-medium mb-2 flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    Instructions
+                  </p>
                   <p className="text-gray-600 text-sm">
                     Cliquez sur chaque situation pour la placer dans la bonne catégorie de stress.
                   </p>
@@ -1210,7 +1213,10 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-700 font-medium mb-2 flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    Instructions
+                  </p>
                   <p className="text-gray-600 text-sm">
                     Classez chaque symptôme dans la bonne catégorie : physique, émotionnel, cognitif ou comportemental.
                   </p>
@@ -1341,7 +1347,10 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                  <p className="text-gray-700 font-medium mb-2">🎯 Instructions</p>
+                  <p className="text-gray-700 font-medium mb-2 flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    Instructions
+                  </p>
                   <p className="text-gray-600 text-sm">
                     Répondez aux questions dans l'ordre. Chaque réponse débloque la question suivante.
                   </p>
