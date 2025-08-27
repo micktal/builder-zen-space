@@ -1461,7 +1461,7 @@ export default function Index() {
 
                       <div className="bg-yellow-100 p-4 rounded border border-yellow-300">
                         <p className="text-sm text-yellow-800">
-                          <strong>💡 Durée recommandée :</strong> 45-90 minutes maximum.
+                          <strong>Durée recommandée :</strong> 45-90 minutes maximum.
                           Si la personne est trop choquée, reporter à plus tard.
                         </p>
                       </div>
