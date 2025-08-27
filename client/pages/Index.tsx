@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -70,7 +70,7 @@ export default function Index() {
     {
       id: 1,
       title: "Scénario 1",
-      description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accél��re mais retombe après la mission.",
+      description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère mais retombe après la mission.",
       question: "S'agit-il de stress aigu, chronique ou post-traumatique ?",
       correctAnswer: "aigu",
       explanation: "Correct ! Il s'agit d'un stress aigu car la réaction est immédiate, intense mais brève, et se résout une fois la situation passée.",
@@ -477,7 +477,7 @@ export default function Index() {
                       <p>
                         <strong>Avancées scientifiques :</strong> L'imagerie cérébrale révèle les mécanismes neurobiologiques.
                         Des traitements efficaces se développent : thérapies cognitivo-comportementales, EMDR,
-                        thérapies d'exposition. La recherche explore aussi les facteurs de vulnérabilité et de résilience.
+                        th��rapies d'exposition. La recherche explore aussi les facteurs de vulnérabilité et de résilience.
                       </p>
                       <p>
                         Aujourd'hui, le SPT est reconnu comme pouvant affecter toute personne exposée à un traumatisme :
@@ -621,7 +621,7 @@ export default function Index() {
                     <h5 className="font-semibold text-therapeutic-800 mb-3">2. Évitement</h5>
                     <div className="space-y-2 text-sm text-gray-700">
                       <p className="font-medium text-therapeutic-700">Quand : Dès qu'une situation rappelle de près ou de loin le trauma</p>
-                      <p><strong>Raison :</strong> Mécanisme de protection pour éviter la réactivation de la détresse</p>
+                      <p><strong>Raison :</strong> Mécanisme de protection pour ��viter la réactivation de la détresse</p>
                       <p><strong>Manifestations :</strong> Évitement des lieux, personnes, activités, conversations liées au trauma</p>
                       <p className="text-xs text-gray-600">Ex : Refuser de conduire après un accident de voiture</p>
                     </div>
