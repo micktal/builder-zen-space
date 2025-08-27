@@ -37,7 +37,7 @@ export default function Index() {
     { id: '3', text: 'Sursaut après un bruit', category: 'normal' },
     { id: '4', text: 'Reviviscences en boucle', category: 'spt' },
     { id: '5', text: 'Tristesse passagère', category: 'normal' },
-    { id: '6', text: 'Évitement syst��matique', category: 'spt' }
+    { id: '6', text: 'Évitement systématique', category: 'spt' }
   ]);
   
   const [droppedItems, setDroppedItems] = useState<{ normal: DragItem[], spt: DragItem[] }>({
@@ -70,7 +70,7 @@ export default function Index() {
     {
       id: 1,
       title: "Scénario 1",
-      description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère mais retombe après la mission.",
+      description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accél��re mais retombe après la mission.",
       question: "S'agit-il de stress aigu, chronique ou post-traumatique ?",
       correctAnswer: "aigu",
       explanation: "Correct ! Il s'agit d'un stress aigu car la réaction est immédiate, intense mais brève, et se résout une fois la situation passée.",
@@ -1303,8 +1303,9 @@ export default function Index() {
 
                           return (
                             <div key={category} className={`p-3 rounded border ${categoryColors[category as keyof typeof categoryColors]}`}>
-                              <h5 className="font-medium text-sm mb-2">
-                                {categorySymbols[category as keyof typeof categorySymbols]} {category}
+                              <h5 className="font-medium text-sm mb-2 flex items-center gap-2">
+                                {React.createElement(categoryIcons[category as keyof typeof categoryIcons], { className: "w-4 h-4" })}
+                                {category}
                               </h5>
                               <div className="space-y-1 text-xs">
                                 {correctSymptoms.map((symptom) => {
