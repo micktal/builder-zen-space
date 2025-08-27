@@ -78,7 +78,7 @@ export default function Index() {
       description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère mais retombe après la mission.",
       question: "S'agit-il de stress aigu, chronique ou post-traumatique ?",
       correctAnswer: "aigu",
-      explanation: "Correct ! Il s'agit d'un stress aigu car la r��action est immédiate, intense mais brève, et se résout une fois la situation passée.",
+      explanation: "Correct ! Il s'agit d'un stress aigu car la réaction est immédiate, intense mais brève, et se résout une fois la situation passée.",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
       titleColor: "text-blue-800"
@@ -1392,7 +1392,7 @@ export default function Index() {
 
                       <div className="bg-red-100 p-4 rounded border border-red-300">
                         <p className="text-sm text-red-800">
-                          <strong>⚠️ À éviter absolument :</strong> Forcer à parler, minimiser l'événement,
+                          <strong>À éviter absolument :</strong> Forcer à parler, minimiser l'événement,
                           donner des conseils, dire "je comprends ce que vous ressentez".
                         </p>
                       </div>
