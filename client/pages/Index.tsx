@@ -749,7 +749,7 @@ export default function Index() {
                       <li>• Difficulté à contrôler vos émotions</li>
                       <li>• Colères soudaines ou tristesse intense</li>
                       <li>• Sensation d'être débordé(e) facilement</li>
-                      <li>• Perte de la capacité à « relativiser »</li>
+                      <li>• Perte de la capacit�� à « relativiser »</li>
                     </ul>
                   </div>
 
@@ -1477,7 +1477,7 @@ export default function Index() {
                     <div className="space-y-4">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-white p-4 rounded border">
-                          <h5 className="font-medium text-green-700 mb-2">📞 Points de contact réguliers</h5>
+                          <h5 className="font-medium text-green-700 mb-2">Points de contact réguliers</h5>
                           <ul className="text-sm text-gray-700 space-y-1">
                             <li>• J+3 : Appel ou visite courte</li>
                             <li>• J+7 : Entretien de suivi</li>
