@@ -1058,7 +1058,7 @@ export default function Index() {
                       <p><strong>Risques techniques :</strong></p>
                       <ul className="space-y-1 ml-4">
                         <li>• Accidents industriels</li>
-                        <li>��� Explosions/incendies</li>
+                        <li>• Explosions/incendies</li>
                         <li>• Blessures graves</li>
                         <li>• Responsabilité collective</li>
                       </ul>
@@ -1648,7 +1648,7 @@ export default function Index() {
                                   <p className={`font-medium mb-2 ${
                                     isCorrect ? 'text-green-800' : 'text-red-800'
                                   }`}>
-                                    {isCorrect ? 'Bonne réponse !' : 'Réponse incorrecte'}
+                                    {isCorrect ? 'Bonne r��ponse !' : 'Réponse incorrecte'}
                                   </p>
                                   <p className="text-sm text-gray-700">
                                     {isCorrect
@@ -2243,7 +2243,14 @@ export default function Index() {
               <Separator />
               
               <div className="grid md:grid-cols-2 gap-6">
-                <Button size="lg" className="h-auto p-6 flex-col gap-3 bg-medical-600 hover:bg-medical-700">
+                <Button
+                  size="lg"
+                  className="h-auto p-6 flex-col gap-3 bg-medical-600 hover:bg-medical-700"
+                  onClick={() => {
+                    setShowInfographic(true);
+                    setTimeout(() => downloadInfographic(), 100);
+                  }}
+                >
                   <Download className="w-8 h-8" />
                   <div className="text-center">
                     <div className="font-semibold">Télécharger l'infographie</div>
