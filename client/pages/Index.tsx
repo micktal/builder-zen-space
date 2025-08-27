@@ -491,7 +491,7 @@ export default function Index() {
           </Card>
         </section>
 
-        {/* Bloc 3 - Réactions immédiates vs SPT */}
+        {/* Bloc 3 - R��actions immédiates vs SPT */}
         <section className="space-y-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
@@ -738,7 +738,7 @@ export default function Index() {
                   <div className="bg-green-50 p-5 rounded-lg border border-green-200">
                     <h5 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
                       <Shield className="w-5 h-5" />
-                      Votre « bouclier émotionnel » est affaibli
+                      Votre �� bouclier émotionnel » est affaibli
                     </h5>
                     <ul className="text-sm text-gray-700 space-y-2">
                       <li>• Difficulté à contrôler vos émotions</li>
@@ -1468,7 +1468,13 @@ export default function Index() {
                       Score : <span className="font-bold text-medical-600">{getExercise4Score()} / {exercise4Questions.length}</span>
                     </p>
                     <div className="space-y-2 text-sm text-gray-700">
-                      <p>• <strong>Identification du stress :</strong> {exercise4Answers[1] === exercise4Questions[0].correctAnswer ? '✅' : '❌'}</p>
+                      <p className="flex items-center gap-2">
+                        <span className="font-medium">Identification du stress :</span>
+                        {exercise4Answers[1] === exercise4Questions[0].correctAnswer ?
+                          <CheckCircle2 className="w-4 h-4 text-green-600" /> :
+                          <XCircle className="w-4 h-4 text-red-600" />
+                        }
+                      </p>
                       <p>• <strong>Reconnaissance des signaux :</strong> {exercise4Answers[2] === exercise4Questions[1].correctAnswer ? '��' : '❌'}</p>
                       <p>• <strong>Attitude managériale :</strong> {exercise4Answers[3] === exercise4Questions[2].correctAnswer ? '✅' : '❌'}</p>
                     </div>
