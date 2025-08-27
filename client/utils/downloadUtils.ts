@@ -3,9 +3,10 @@
 export const downloadInfographicAsImage = async () => {
   try {
     // Try to load html2canvas from CDN if not available
-    if (typeof window !== 'undefined' && !(window as any).html2canvas) {
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    if (typeof window !== "undefined" && !(window as any).html2canvas) {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
       document.head.appendChild(script);
 
       await new Promise((resolve, reject) => {
@@ -17,52 +18,55 @@ export const downloadInfographicAsImage = async () => {
     const html2canvas = (window as any).html2canvas;
 
     // Find the infographic element
-    const element = document.getElementById('spt-infographic');
+    const element = document.getElementById("spt-infographic");
     if (!element) {
-      console.error('Infographic element not found');
+      console.error("Infographic element not found");
       return;
     }
 
     // Generate canvas from the element
     const canvas = await html2canvas(element, {
-      backgroundColor: '#ffffff',
+      backgroundColor: "#ffffff",
       scale: 2, // Higher quality
       useCORS: true,
       allowTaint: true,
       height: element.scrollHeight,
-      width: element.scrollWidth
+      width: element.scrollWidth,
     });
 
     // Convert canvas to blob
-    canvas.toBlob((blob: Blob | null) => {
-      if (blob) {
-        // Create download link
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'SPT-Symptomes-et-Mecanismes.png';
+    canvas.toBlob(
+      (blob: Blob | null) => {
+        if (blob) {
+          // Create download link
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "SPT-Symptomes-et-Mecanismes.png";
 
-        // Trigger download
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+          // Trigger download
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
 
-        // Clean up
-        URL.revokeObjectURL(url);
-      }
-    }, 'image/png', 1.0);
-
+          // Clean up
+          URL.revokeObjectURL(url);
+        }
+      },
+      "image/png",
+      1.0,
+    );
   } catch (error) {
-    console.error('Error generating infographic:', error);
+    console.error("Error generating infographic:", error);
     // Fallback: download as HTML content
     downloadInfographicAsHTML();
   }
 };
 
 export const downloadInfographicAsHTML = () => {
-  const element = document.getElementById('spt-infographic');
+  const element = document.getElementById("spt-infographic");
   if (!element) {
-    console.error('Infographic element not found');
+    console.error("Infographic element not found");
     return;
   }
 
@@ -110,31 +114,31 @@ export const downloadInfographicAsHTML = () => {
 </html>`;
 
   // Create and download blob
-  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const blob = new Blob([htmlContent], { type: "text/html" });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   link.href = url;
-  link.download = 'SPT-Symptomes-et-Mecanismes.html';
-  
+  link.download = "SPT-Symptomes-et-Mecanismes.html";
+
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  
+
   URL.revokeObjectURL(url);
 };
 
 // Simplified download function that opens a printable version
 export const downloadInfographic = () => {
   // Create a new window with the infographic content
-  const element = document.getElementById('spt-infographic');
+  const element = document.getElementById("spt-infographic");
   if (!element) {
-    console.error('Infographic element not found');
+    console.error("Infographic element not found");
     return;
   }
 
-  const printWindow = window.open('', '_blank');
+  const printWindow = window.open("", "_blank");
   if (!printWindow) {
-    alert('Veuillez autoriser les pop-ups pour télécharger l\'infographie');
+    alert("Veuillez autoriser les pop-ups pour télécharger l'infographie");
     return;
   }
 
@@ -214,9 +218,9 @@ export const downloadInfographic = () => {
 
 // Alternative simple download as HTML file
 export const downloadInfographicAsFile = () => {
-  const element = document.getElementById('spt-infographic');
+  const element = document.getElementById("spt-infographic");
   if (!element) {
-    console.error('Infographic element not found');
+    console.error("Infographic element not found");
     return;
   }
 
@@ -259,11 +263,11 @@ export const downloadInfographicAsFile = () => {
 </body>
 </html>`;
 
-  const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+  const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   link.href = url;
-  link.download = 'SPT-Symptomes-et-Mecanismes.html';
+  link.download = "SPT-Symptomes-et-Mecanismes.html";
 
   document.body.appendChild(link);
   link.click();
