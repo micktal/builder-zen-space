@@ -68,6 +68,9 @@ export default function Index() {
   const [exercise4Answers, setExercise4Answers] = useState<{[key: number]: string}>({});
   const [exercise4ShowResults, setExercise4ShowResults] = useState(false);
 
+  // Infographic state
+  const [showInfographic, setShowInfographic] = useState(false);
+
   const exercise1Scenarios = [
     {
       id: 1,
@@ -1055,7 +1058,7 @@ export default function Index() {
                       <p><strong>Risques techniques :</strong></p>
                       <ul className="space-y-1 ml-4">
                         <li>• Accidents industriels</li>
-                        <li>• Explosions/incendies</li>
+                        <li>��� Explosions/incendies</li>
                         <li>• Blessures graves</li>
                         <li>• Responsabilité collective</li>
                       </ul>
