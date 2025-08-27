@@ -800,7 +800,7 @@ export default function Index() {
               <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Toutes les personnes exposées à un événement traumatique ne développent pas un stress post-traumatique.
-                  La différence réside dans un ��quilibre entre <strong>facteurs de risque</strong> et <strong>facteurs de protection</strong>.
+                  La différence réside dans un équilibre entre <strong>facteurs de risque</strong> et <strong>facteurs de protection</strong>.
                 </p>
               </div>
 
@@ -1243,7 +1243,7 @@ export default function Index() {
                       <div className="bg-white p-4 rounded border">
                         <h5 className="font-medium text-green-700 mb-2">Relaxation progressive</h5>
                         <p className="text-sm text-gray-700 mb-2">
-                          <strong>Quand :</strong> Fin de journ��e, tensions musculaires
+                          <strong>Quand :</strong> Fin de journée, tensions musculaires
                         </p>
                         <p className="text-sm text-gray-700">
                           <strong>Comment :</strong> Contractez puis relâchez chaque groupe musculaire,
@@ -1554,7 +1554,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Simulations interactives pour Module 4
+              Simulations interactives
             </h2>
           </div>
 
