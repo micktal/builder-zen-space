@@ -1407,7 +1407,7 @@ export default function Index() {
 
                     <div className="space-y-4">
                       <div className="bg-white p-4 rounded border">
-                        <h5 className="font-medium text-yellow-700 mb-3">📋 Protocole en 6 étapes</h5>
+                        <h5 className="font-medium text-yellow-700 mb-3">Protocole en 6 étapes</h5>
                         <div className="space-y-3">
                           <div className="flex items-start gap-3">
                             <span className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
