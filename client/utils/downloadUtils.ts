@@ -2,9 +2,20 @@
 
 export const downloadInfographicAsImage = async () => {
   try {
-    // Dynamically import html2canvas only when needed
-    const html2canvas = (await import('html2canvas')).default;
-    
+    // Try to load html2canvas from CDN if not available
+    if (typeof window !== 'undefined' && !(window as any).html2canvas) {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      document.head.appendChild(script);
+
+      await new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = reject;
+      });
+    }
+
+    const html2canvas = (window as any).html2canvas;
+
     // Find the infographic element
     const element = document.getElementById('spt-infographic');
     if (!element) {
@@ -23,19 +34,19 @@ export const downloadInfographicAsImage = async () => {
     });
 
     // Convert canvas to blob
-    canvas.toBlob((blob) => {
+    canvas.toBlob((blob: Blob | null) => {
       if (blob) {
         // Create download link
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
         link.download = 'SPT-Symptomes-et-Mecanismes.png';
-        
+
         // Trigger download
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
+
         // Clean up
         URL.revokeObjectURL(url);
       }
