@@ -776,7 +776,7 @@ export default function Index() {
                 </h4>
                 <p className="text-gray-700">
                   Ce "mode survie" n'est pas irréversible ! Avec un accompagnement adapté,
-                  votre cerveau peut réapprendre à faire la différence entre danger r��el et fausse alerte.
+                  votre cerveau peut réapprendre à faire la différence entre danger réel et fausse alerte.
                   Les thérapies spécialisées aident à « réparer » ces mécanismes déréglés.
                 </p>
               </div>
@@ -1824,7 +1824,7 @@ export default function Index() {
               <CardHeader>
                 <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
                   <Brain className="w-6 h-6" />
-                  Exercice 3 – Identifier la nature des symptômes
+                  Identifier la nature des symptômes
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
