@@ -2227,7 +2227,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-4 h-4 bg-medical-500 rounded-full"></div>
             <h2 className="text-3xl font-bold text-medical-800">
-              Vers la guérison : ressources et espoir
+              Vers la guérison
             </h2>
           </div>
           
