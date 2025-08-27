@@ -654,7 +654,7 @@ export default function Index() {
               
               <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
                 <h5 className="font-semibold text-yellow-800 mb-3 flex items-center gap-2">
-                  ��� Principaux déclencheurs
+                  Les Principaux déclencheurs
                 </h5>
                 <div className="space-y-2 text-sm text-yellow-800">
                   <p><strong>Sensoriels :</strong> Sons (sirènes, explosions), odeurs spécifiques, textures, lumières</p>
@@ -2030,7 +2030,7 @@ export default function Index() {
                                   onClick={() => handleExercise4Answer(question.id, option)}
                                   disabled={isAnswered}
                                 >
-                                  {isAnswered && isSelected && isCorrect && "✓ "}
+                                  {isAnswered && isSelected && isCorrect && "��� "}
                                   {isAnswered && isSelected && !isCorrect && "❌ "}
                                   {isAnswered && !isSelected && option === question.correctAnswer && "✓ "}
                                   {option}
