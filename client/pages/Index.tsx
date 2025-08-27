@@ -1960,7 +1960,7 @@ export default function Index() {
               <CardHeader>
                 <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
                   <Users className="w-6 h-6" />
-                  Exercice 4 – Simulation intégrée (mise en situation)
+                  Simulation intégrée (mise en situation)
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
