@@ -477,7 +477,7 @@ export default function Index() {
                       <p>
                         <strong>Avancées scientifiques :</strong> L'imagerie cérébrale révèle les mécanismes neurobiologiques.
                         Des traitements efficaces se développent : thérapies cognitivo-comportementales, EMDR,
-                        th��rapies d'exposition. La recherche explore aussi les facteurs de vulnérabilité et de résilience.
+                        thérapies d'exposition. La recherche explore aussi les facteurs de vulnérabilité et de résilience.
                       </p>
                       <p>
                         Aujourd'hui, le SPT est reconnu comme pouvant affecter toute personne exposée à un traumatisme :
@@ -621,7 +621,7 @@ export default function Index() {
                     <h5 className="font-semibold text-therapeutic-800 mb-3">2. Évitement</h5>
                     <div className="space-y-2 text-sm text-gray-700">
                       <p className="font-medium text-therapeutic-700">Quand : Dès qu'une situation rappelle de près ou de loin le trauma</p>
-                      <p><strong>Raison :</strong> Mécanisme de protection pour ��viter la réactivation de la détresse</p>
+                      <p><strong>Raison :</strong> Mécanisme de protection pour éviter la réactivation de la détresse</p>
                       <p><strong>Manifestations :</strong> Évitement des lieux, personnes, activités, conversations liées au trauma</p>
                       <p className="text-xs text-gray-600">Ex : Refuser de conduire après un accident de voiture</p>
                     </div>
@@ -1311,8 +1311,9 @@ export default function Index() {
                                 {correctSymptoms.map((symptom) => {
                                   const userPlaced = exercise3Placements[symptom.id] === category;
                                   return (
-                                    <div key={symptom.id} className={`p-1 rounded ${userPlaced ? 'bg-green-100' : 'bg-red-100'}`}>
-                                      {userPlaced ? '✓' : '❌'} {symptom.text}
+                                    <div key={symptom.id} className={`p-1 rounded ${userPlaced ? 'bg-green-100' : 'bg-red-100'} flex items-center gap-1`}>
+                                      {userPlaced ? <CheckCircle2 className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
+                                      {symptom.text}
                                     </div>
                                   );
                                 })}
