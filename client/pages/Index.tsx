@@ -374,7 +374,7 @@ export default function Index() {
                   <div>
                     <h4 className="font-semibold text-medical-800">Vidéo recommandée</h4>
                     <p className="text-sm text-gray-600">
-                      Animation de 30 secondes : Deux collègues t��moins d'un accident de voiture
+                      Animation de 30 secondes : Deux collègues témoins d'un accident de voiture
                     </p>
                   </div>
                 </div>
