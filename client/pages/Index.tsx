@@ -1358,7 +1358,10 @@ export default function Index() {
 
                 {/* Scénario principal */}
                 <div className="bg-gradient-to-r from-medical-50 to-therapeutic-50 p-6 rounded-lg border border-medical-200">
-                  <h4 className="font-semibold text-medical-800 mb-4">💼 Mise en situation</h4>
+                  <h4 className="font-semibold text-medical-800 mb-4 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    Mise en situation
+                  </h4>
                   <p className="text-gray-700 text-lg leading-relaxed">
                     "Vous êtes manager. Un collaborateur vous confie :<br />
                     <em>'Depuis quelques semaines je dors très mal, je suis constamment tendu,
