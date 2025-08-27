@@ -522,7 +522,7 @@ export default function Index() {
                 </div>
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
                   <h4 className="font-semibold text-medical-800 mb-2">SPT</h4>
-                  <p className="text-sm text-gray-600">Symptômes persistants au-delà d'1 mois</p>
+                  <p className="text-sm text-gray-600">Sympt��mes persistants au-delà d'1 mois</p>
                 </div>
               </div>
 
@@ -617,7 +617,7 @@ export default function Index() {
                     <h5 className="font-semibold text-medical-800 mb-3">1. Reviviscences</h5>
                     <div className="space-y-2 text-sm text-gray-700">
                       <p className="font-medium text-medical-700">Quand : Déclenchées soudainement par des stimuli rappelant le trauma</p>
-                      <p><strong>Raison :</strong> L'hippocampe n'arrive pas à intégrer le souvenir traumatique comme un ��vénement passé</p>
+                      <p><strong>Raison :</strong> L'hippocampe n'arrive pas à intégrer le souvenir traumatique comme un événement passé</p>
                       <p><strong>Manifestations :</strong> Flashbacks vivaces, cauchemars récurrents, impression que l'événement se reproduit ici et maintenant</p>
                       <p className="text-xs text-gray-600">Ex : Une sirène déclenche le revécu complet d'un accident</p>
                     </div>
@@ -1536,7 +1536,7 @@ export default function Index() {
                         <p className="font-medium text-medical-700 mb-2">Cas complexes</p>
                         <ul className="text-gray-700 space-y-1">
                           <li>• Psychologue clinicien</li>
-                          <li>• Psychiatre spécialisé</li>
+                          <li>• Psychiatre spécialis��</li>
                           <li>• Équipe mobile de crise</li>
                         </ul>
                       </div>
