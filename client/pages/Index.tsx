@@ -1094,7 +1094,7 @@ export default function Index() {
 
                 <div className="space-y-6">
                   <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-                    <h4 className="font-semibold text-blue-800 mb-4">🔍 Évaluation initiale</h4>
+                    <h4 className="font-semibold text-blue-800 mb-4">Évaluation initiale</h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-3">
                         <h5 className="font-medium text-blue-700">Facteurs de vulnérabilité</h5>
@@ -2030,7 +2030,7 @@ export default function Index() {
                                   onClick={() => handleExercise4Answer(question.id, option)}
                                   disabled={isAnswered}
                                 >
-                                  {isAnswered && isSelected && isCorrect && "��� "}
+                                  {isAnswered && isSelected && isCorrect && "✓ "}
                                   {isAnswered && isSelected && !isCorrect && "❌ "}
                                   {isAnswered && !isSelected && option === question.correctAnswer && "✓ "}
                                   {option}
