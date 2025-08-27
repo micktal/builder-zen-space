@@ -954,7 +954,10 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="bg-medical-50 p-4 rounded-lg border border-medical-200">
-                  <p className="text-gray-700 font-medium mb-2">📋 Instructions</p>
+                  <p className="text-gray-700 font-medium mb-2 flex items-center gap-2">
+                    <FileText className="w-4 h-4" />
+                    Instructions
+                  </p>
                   <p className="text-gray-600 text-sm">
                     Lisez chaque scénario et cliquez sur le type de stress que vous identifiez.
                     Vous recevrez un feedback immédiat !
