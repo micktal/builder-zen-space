@@ -1565,7 +1565,7 @@ export default function Index() {
               <CardHeader>
                 <CardTitle className="text-xl text-medical-800 flex items-center gap-2">
                   <Target className="w-6 h-6" />
-                  Exercice 1 – Identifier le type de stress
+                  Identifier le type de stress
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
