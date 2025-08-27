@@ -78,7 +78,7 @@ export default function Index() {
       description: "Un agent de sécurité vit un contrôle inopiné → son rythme cardiaque s'accélère mais retombe après la mission.",
       question: "S'agit-il de stress aigu, chronique ou post-traumatique ?",
       correctAnswer: "aigu",
-      explanation: "Correct ! Il s'agit d'un stress aigu car la réaction est immédiate, intense mais brève, et se résout une fois la situation passée.",
+      explanation: "Correct ! Il s'agit d'un stress aigu car la r��action est immédiate, intense mais brève, et se résout une fois la situation passée.",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
       titleColor: "text-blue-800"
@@ -1120,7 +1120,7 @@ export default function Index() {
                   </div>
 
                   <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
-                    <h4 className="font-semibold text-green-800 mb-4">📋 Plans types selon profil</h4>
+                    <h4 className="font-semibold text-green-800 mb-4">Plans types selon profil</h4>
 
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="item-1">
